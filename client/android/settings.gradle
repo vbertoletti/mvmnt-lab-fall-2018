@@ -1,0 +1,3 @@
+rootProject.name = 'mvmnt'
+
+include ':app'
