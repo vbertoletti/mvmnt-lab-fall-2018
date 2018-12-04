@@ -13,8 +13,10 @@
     "navigation": "^5.1.0",
     "react": "16.6.1",
     "react-apollo": "^2.3.2",
+    "react-dom": "^16.6.3",
     "react-final-form": "^4.0.2",
     "react-native": "0.57.7",
+    "react-native-gesture-handler": "^1.0.10",
     "realm": "^2.21.0"
   },
   "devDependencies": {
