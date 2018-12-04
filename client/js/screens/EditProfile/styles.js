@@ -1,13 +1,9 @@
 import { StyleSheet } from "react-native";
+import { globalStyles } from "../../../config/styles";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignSelf: "center",
-    marginLeft: 10,
-    marginRight: 10
-  }
+  container: globalStyles.container
 });
+
 
 export default styles;
