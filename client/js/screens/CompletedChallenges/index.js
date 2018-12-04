@@ -1,0 +1,3 @@
+import CompletedChallengesContainer from './CompletedChallengesContainer';
+
+export default CompletedChallengesContainer
