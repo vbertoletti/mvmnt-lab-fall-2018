@@ -2,23 +2,23 @@ import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import propTypes from "prop-types";
 
-const MainPage = ({ navigation }) => {
+const SignIn = ({ navigation }) => {
   return (
     <View>
-      <Text>I am the MainPage Screen</Text>
+      <Text>I am the SignIn Screen</Text>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("WorkoutSession");
+          navigation.navigate("signUp");
         }}
       >
-        <Text>To WorkoutSession</Text>
+        <Text>Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-MainPage.propTypes = {
+SignIn.propTypes = {
   navigation: propTypes.object.isRequired
 };
 
-export default MainPage;
+export default SignIn;

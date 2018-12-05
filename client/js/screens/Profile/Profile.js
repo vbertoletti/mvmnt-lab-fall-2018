@@ -1,49 +1,59 @@
 import React from "react";
-import { Text, View } from "react-native";
-import { withNavigation } from 'react-navigation'
-import styles from "./styles";
+import { Text, View, TouchableOpacity } from "react-native";
+import propTypes from "prop-types";
 
-const Profile = ({navigation}) => {
-    return(
+const Profile = ({ navigation }) => {
+  return (
     <View>
-            <Text>I am the Profile Screen</Text>
-            <Text
-                onPress={() => {
-                    navigation.navigate("EditProfile");
-                }}
-            >
-                Edit Profile
-            </Text>
-            <Text
-                onPress={() => {
-                    navigation.navigate("DailyReports");
-                }}
-            >
-                To DailyReports
-            </Text>
-            <Text
-                onPress={() => {
-                    navigation.navigate("CompletedChalleneges");
-                }}
-            >
-                To CompletedChallenges
-            </Text>
-            <Text
-                onPress={() => {
-                    navigation.navigate("About");
-                }}
-            >
-                To About
-            </Text>
-            <Text
-                onPress={() => {
-                    navigation.navigate("login");
-                }}
-            >
-                logout
-            </Text>
+      <Text>I am the Profile Screen</Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("EditProfile");
+        }}
+      >
+        <Text>Edit Profile</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("DailyReports");
+        }}
+      >
+        <Text>To DailyReports</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("CompletedChalleneges");
+        }}
+      >
+        <Text>To CompletedChallenges</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Reminders");
+        }}
+      >
+        <Text>To Reminders</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("About");
+        }}
+      >
+        <Text>To About</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("SignIn");
+        }}
+      >
+        <Text>logout</Text>
+      </TouchableOpacity>
     </View>
-    )
-    };
-    
-    export default withNavigation(Profile);
+  );
+};
+
+Profile.propTypes = {
+  navigation: propTypes.object.isRequired
+};
+
+export default Profile;

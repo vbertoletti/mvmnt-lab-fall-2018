@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { withNavigation } from 'react-navigation'
-import styles from "./styles";
 
-const Reminders = ({ navigation }) => {
+
+const Reminders = () => {
     return (
         <View>
             <Text>I am the Reminders Screen</Text>
@@ -11,4 +10,4 @@ const Reminders = ({ navigation }) => {
     )
 };
 
-export default withNavigation(Reminders);
+export default Reminders;

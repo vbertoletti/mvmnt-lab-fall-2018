@@ -13,7 +13,7 @@ import DailyReportsScreen from '../screens/DailyReports';
 import CompletedChallenegesScreen from '../screens/CompletedChallenges';
 import RemindersScreen from '../screens/Reminders';
 import AboutScreen from '../screens/About';
-import LoginScreen from '../screens/LogIn';
+import SignInScreen from '../screens/SignIn';
 import EditProfileScreen from '../screens/EditProfile';
 import SignUpScreen from '../screens/SignUp'
 import { sharedNavigationOptions } from "./config";
@@ -53,7 +53,7 @@ const ProfileStack = createStackNavigator(
     Reminders: RemindersScreen,
     About: AboutScreen,
     EditProfile: EditProfileScreen,
-    login: LoginScreen,
+    SignIn: SignInScreen,
     signUp: SignUpScreen
   },
   {
@@ -62,7 +62,7 @@ const ProfileStack = createStackNavigator(
     })
   }
 );
-// Dedicated stacks for Schedule and Faves will go here too!
+
 export default createBottomTabNavigator(
   {
     Poses: PosesStack,
