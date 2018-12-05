@@ -1,9 +1,11 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 import styles from "./styles";
 
 const WorkoutSession = () => {
-    return <Text>I am the WorkoutSession Screen</Text>;
-};
-
-export default WorkoutSession;
+    return <View>
+        <Text>I am the WorkoutSession Screen</Text>
+      </View>;
+    };
+    
+    export default WorkoutSession;

@@ -1,9 +1,21 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import {withNavigation} from 'react-navigation'
 import styles from "./styles";
 
-const Login = () => {
-    return <Text>I am the Login Screen</Text>;
+const Login = ({navigation}) => {
+  return (
+    <View>
+          <Text>I am the Login Screen</Text>
+          <Text
+              onPress={() => {
+                  navigation.navigate("signUp");
+              }}
+          >
+              Sign Up
+            </Text>
+    </View>
+  );
 };
 
-export default Login;
+export default withNavigation(Login);
