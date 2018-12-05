@@ -10,8 +10,8 @@
     "apollo-boost": "^0.1.22",
     "final-form": "^4.11.0",
     "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
     "moment": "^2.22.2",
-    "native-base": "^2.8.1",
     "navigation": "^5.1.0",
     "react": "16.6.1",
     "react-apollo": "^2.3.2",
@@ -19,6 +19,7 @@
     "react-final-form": "^4.0.2",
     "react-native": "0.57.7",
     "react-native-gesture-handler": "^1.0.10",
+    "react-native-linear-gradient": "^2.5.3",
     "react-navigation": "^3.0.5",
     "realm": "^2.21.0"
   },
@@ -33,7 +34,11 @@
   },
   "rnpm": {
     "assets": [
+<<<<<<< HEAD
       "client/js/assets/fonts"
+=======
+      "js/assets/fonts"
+>>>>>>> add linear-gradient
     ]
   }
 }
