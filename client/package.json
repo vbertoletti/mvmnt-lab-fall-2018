@@ -18,6 +18,7 @@
     "react-final-form": "^4.0.2",
     "react-native": "0.57.7",
     "react-native-gesture-handler": "^1.0.10",
+    "react-navigation": "^3.0.5",
     "realm": "^2.21.0"
   },
   "devDependencies": {
