@@ -1,6 +1,7 @@
 {
   "name": "mvmnt-lab-api",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "My Graphcool Service",
   "dependencies": {
     "@types/bcryptjs": "^2.4.1",
@@ -10,4 +11,7 @@
     "graphql-request": "^1.4.0",
     "validator": "^9.0.0"
   }
+=======
+  "description": "My Graphcool Service"
+>>>>>>> commit changes before pulling from develop
 }
