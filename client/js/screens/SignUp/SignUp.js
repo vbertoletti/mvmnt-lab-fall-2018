@@ -69,6 +69,7 @@ const Signup = ({ data }) => {
                       style={styles.input}
                       placeholder="Password"
                       placeholderTextColor="white"
+                      secureTextEntry={true}
                     />
                   </View>
                 )}
@@ -81,6 +82,7 @@ const Signup = ({ data }) => {
                       style={styles.input}
                       placeholder="Confirm password"
                       placeholderTextColor="white"
+                      secureTextEntry={true}
                     />
                   </View>
                 )}
