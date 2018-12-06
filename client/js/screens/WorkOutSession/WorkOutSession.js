@@ -1,9 +1,12 @@
 import React from "react";
-import { Text } from "react-native";
-import styles from "./styles";
+import { Text, View } from "react-native";
 
 const WorkoutSession = () => {
-    return <Text>I am the WorkoutSession Screen</Text>;
+  return (
+    <React.Fragment>
+      <Text>I am the WorkoutSession Screen</Text>
+    </React.Fragment>
+  );
 };
 
 export default WorkoutSession;

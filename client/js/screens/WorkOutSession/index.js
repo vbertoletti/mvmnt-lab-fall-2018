@@ -1,3 +1,3 @@
-import WorkoutSessionContainer from "./WorkoutSessionContainer";
+import WorkOutSessionContainer from "./WorkOutSessionContainer";
 
-export default WorkoutSessionContainer;
+export default WorkOutSessionContainer;

@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import Profile from "./Profile";
+import Reminders from "./Reminders";
 import propTypes from 'prop-types'
 
-class ProfileContainer extends Component {
+class RemindersContainer extends Component {
   static navigationOptions = {
-    title: "PROFILE",
+    title: "REMINDERS",
     headerTitleStyle: {
       color: "white",
       fontSize: 24
     }
   };
   render() {
-    return <Profile navigation={this.props.navigation} />;
+    return <Reminders navigation={this.props.navigation} />;
   }
 }
 
-ProfileContainer.propTypes = {
+RemindersContainer.propTypes = {
   navigation: propTypes.object.isRequired
 };
 
-export default ProfileContainer;
+export default RemindersContainer;

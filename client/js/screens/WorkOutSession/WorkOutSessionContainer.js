@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import WorkoutSession from "./WorkoutSession";
+import WorkOutSession from "./WorkOutSession";
 
-class WorkoutSessionContainer extends Component {
+class WorkOutSessionContainer extends Component {
   render() {
-    return <WorkoutSession />;
+    return <WorkOutSession />;
   }
 }
 
-export default WorkoutSessionContainer;
+export default WorkOutSessionContainer;

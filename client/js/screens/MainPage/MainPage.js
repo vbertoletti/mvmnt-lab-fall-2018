@@ -1,9 +1,24 @@
 import React from "react";
-import { Text } from "react-native";
-import styles from "./styles";
+import { Text, TouchableOpacity } from "react-native";
+import propTypes from "prop-types";
 
-const MainPage = () => {
-  return <Text>I am the MainPage Screen</Text>;
+const MainPage = ({ navigation }) => {
+  return (
+    <React.Fragment>
+      <Text>I am the MainPage Screen</Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("WorkoutSession");
+        }}
+      >
+        <Text>To WorkoutSession</Text>
+        </TouchableOpacity>
+    </React.Fragment>
+  );
+};
+
+MainPage.propTypes = {
+  navigation: propTypes.object.isRequired
 };
 
 export default MainPage;

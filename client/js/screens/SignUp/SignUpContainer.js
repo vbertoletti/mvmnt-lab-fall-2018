@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Signup from "./Signup";
+import SignUp from "./SignUp";
 
 class SignupContainer extends Component {
-    render() {
-        return <Signup />;
-    }
+  render() {
+    return <SignUp />;
+  }
 }
 
 export default SignupContainer;
