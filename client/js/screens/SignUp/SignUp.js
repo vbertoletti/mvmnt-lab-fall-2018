@@ -2,18 +2,19 @@ import React, { Fragment } from "react";
 import {
   Text,
   ImageBackground,
-  View,
   TextInput,
   TouchableOpacity
 } from "react-native";
 import styles from "./styles";
 import { Form, Field } from "react-final-form";
 
-const onSubmit = async (values, createUser) => {
-  const res = await createUser({ variables: values });
+const onSubmit = async (values, signup) => {
+  const res = await signup({ variables: values });
 };
 
-const Signup = ({ data }) => {
+const required = value => (value ? undefined : "*Required Field");
+
+const Signup = ({ signup }) => {
   return (
     <Fragment>
       <ImageBackground
@@ -22,48 +23,51 @@ const Signup = ({ data }) => {
       >
         <Text style={styles.register}>REGISTER</Text>
         <Form
-          onSubmit={values => onSubmit(values, createUser)}
+          onSubmit={values => onSubmit(values, signup)}
           render={({ handleSubmit, pristine, invalid }) => (
-            <View>
-              <Field name="firstname">
+            <Fragment>
+              <Field name="firstname" validate={required}>
                 {({ input, meta }) => (
-                  <View>
+                  <Fragment>
                     <TextInput
                       {...input}
                       style={styles.input}
                       placeholder="First name"
                       placeholderTextColor="white"
                     />
-                  </View>
+                    {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  </Fragment>
                 )}
               </Field>
-              <Field name="lastname">
+              <Field name="lastname" validate={required}>
                 {({ input, meta }) => (
-                  <View>
+                  <Fragment>
                     <TextInput
                       {...input}
                       style={styles.input}
                       placeholder="Last name"
                       placeholderTextColor="white"
                     />
-                  </View>
+                    {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  </Fragment>
                 )}
               </Field>
-              <Field name="email">
+              <Field name="email" validate={required}>
                 {({ input, meta }) => (
-                  <View>
+                  <Fragment>
                     <TextInput
                       {...input}
                       style={styles.input}
                       placeholder="Email"
                       placeholderTextColor="white"
                     />
-                  </View>
+                    {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  </Fragment>
                 )}
               </Field>
-              <Field name="password">
+              <Field name="password" validate={required}>
                 {({ input, meta }) => (
-                  <View>
+                  <Fragment>
                     <TextInput
                       {...input}
                       style={styles.input}
@@ -71,12 +75,13 @@ const Signup = ({ data }) => {
                       placeholderTextColor="white"
                       secureTextEntry={true}
                     />
-                  </View>
+                    {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  </Fragment>
                 )}
               </Field>
-              <Field name="confirmPassword">
+              <Field name="confirmPassword" validate={required}>
                 {({ input, meta }) => (
-                  <View>
+                  <Fragment>
                     <TextInput
                       {...input}
                       style={styles.input}
@@ -84,7 +89,8 @@ const Signup = ({ data }) => {
                       placeholderTextColor="white"
                       secureTextEntry={true}
                     />
-                  </View>
+                    {meta.error && meta.touched && <Text>{meta.error}</Text>}
+                  </Fragment>
                 )}
               </Field>
               <TouchableOpacity
@@ -93,7 +99,7 @@ const Signup = ({ data }) => {
               >
                 <Text style={styles.text}>REGISTER</Text>
               </TouchableOpacity>
-            </View>
+            </Fragment>
           )}
         />
       </ImageBackground>
