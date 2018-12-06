@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Poses from "./Poses";
+import propTypes from "prop-types";
 
 class PosesContainer extends Component {
   static navigationOptions = {
@@ -13,5 +14,9 @@ class PosesContainer extends Component {
     return <Poses navigation={this.props.navigation} />;
   }
 }
+
+PosesContainer.propTypes = {
+  navigation: propTypes.object.isRequired
+};
 
 export default PosesContainer;

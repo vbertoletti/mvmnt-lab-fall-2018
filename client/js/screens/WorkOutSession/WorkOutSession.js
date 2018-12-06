@@ -3,9 +3,9 @@ import { Text, View } from "react-native";
 
 const WorkoutSession = () => {
   return (
-    <View>
+    <React.Fragment>
       <Text>I am the WorkoutSession Screen</Text>
-    </View>
+    </React.Fragment>
   );
 };
 

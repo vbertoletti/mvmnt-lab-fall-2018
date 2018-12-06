@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import propTypes from "prop-types";
 
 const Poses = ({ navigation }) => {
   return (
-    <View>
+    <React.Fragment>
       <Text>I am the Poses Screen</Text>
       <TouchableOpacity
         onPress={() => {
@@ -13,7 +13,7 @@ const Poses = ({ navigation }) => {
       >
         <Text>To PosesDetails</Text>
       </TouchableOpacity>
-    </View>
+    </React.Fragment>
   );
 };
 

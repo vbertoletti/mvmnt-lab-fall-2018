@@ -72,7 +72,7 @@ const ProfileStack = createStackNavigator(
   }
 );
 
-const tabnav = createBottomTabNavigator(
+const TabNav = createBottomTabNavigator(
   {
     Poses: PosesStack,
     Main: MainStack,
@@ -107,16 +107,14 @@ const tabnav = createBottomTabNavigator(
   }
 );
 
-const AppStack = tabnav;
+const AppStack = TabNav;
 
-export default createAppContainer(
-  createSwitchNavigator(
-    {
-      Auth: AuthStack,
-      App: AppStack
-    },
-    {
-      initialRouteName: "Auth"
-    }
-  )
+export default createSwitchNavigator(
+  {
+    Auth: AuthStack,
+    App: AppStack
+  },
+  {
+    initialRouteName: "Auth"
+  }
 );

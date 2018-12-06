@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MainPage from "./MainPage";
+import propTypes from "prop-types";
 
 class MainPageContainer extends Component {
   static navigationOptions = {
@@ -13,5 +14,9 @@ class MainPageContainer extends Component {
     return <MainPage navigation={this.props.navigation} />;
   }
 }
+
+MainPageContainer.propTypes = {
+  navigation: propTypes.object.isRequired
+};
 
 export default MainPageContainer;

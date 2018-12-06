@@ -1,11 +1,11 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 
 const Reminders = () => {
   return (
-    <View>
+    <React.Fragment>
       <Text>I am the Reminders Screen</Text>
-    </View>
+    </React.Fragment>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import propTypes from "prop-types";
 
 const MainPage = ({ navigation }) => {
   return (
-    <View>
+    <React.Fragment>
       <Text>I am the MainPage Screen</Text>
       <TouchableOpacity
         onPress={() => {
@@ -12,8 +12,8 @@ const MainPage = ({ navigation }) => {
         }}
       >
         <Text>To WorkoutSession</Text>
-      </TouchableOpacity>
-    </View>
+        </TouchableOpacity>
+    </React.Fragment>
   );
 };
 

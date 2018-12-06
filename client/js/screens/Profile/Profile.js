@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text,TouchableOpacity } from "react-native";
 import propTypes from "prop-types";
 
 const Profile = ({ navigation }) => {
   return (
-    <View>
+    <React.Fragment>
       <Text>I am the Profile Screen</Text>
       <TouchableOpacity
         onPress={() => {
@@ -48,7 +48,7 @@ const Profile = ({ navigation }) => {
       >
         <Text>logout</Text>
       </TouchableOpacity>
-    </View>
+    </React.Fragment>
   );
 };
 

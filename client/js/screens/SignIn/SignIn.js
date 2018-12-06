@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import propTypes from "prop-types";
 
 const SignIn = ({ navigation }) => {
   return (
-    <View>
+    <React.Fragment>
       <Text>I am the SignIn Screen</Text>
       <TouchableOpacity
         onPress={() => {
@@ -20,7 +20,7 @@ const SignIn = ({ navigation }) => {
       >
         <Text>Log in</Text>
       </TouchableOpacity>
-    </View>
+    </React.Fragment>
   );
 };
 
