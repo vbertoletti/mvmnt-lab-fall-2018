@@ -34,11 +34,7 @@
   },
   "rnpm": {
     "assets": [
-<<<<<<< HEAD
-      "client/js/assets/fonts"
-=======
       "js/assets/fonts"
->>>>>>> add linear-gradient
     ]
   }
 }

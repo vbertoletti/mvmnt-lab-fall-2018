@@ -43,6 +43,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* mvmntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mvmntTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		316E9D54EBCC4F06B1DD67EA /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8576B92D324441AA9B133D /* MaterialCommunityIcons.ttf */; };
 		33AE68C8C2164ED3AE755491 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A11C2AD2C4F57A4D7F4A6 /* EvilIcons.ttf */; };
 		3867791E31F348808ACC8E85 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800F446B1F834584BAB76ACF /* Roboto_medium.ttf */; };
@@ -51,6 +52,9 @@
 		652B840540304CEAAAC23EF4 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8445284DE9C0466A9C441543 /* Foundation.ttf */; };
 		7BF46020E4BB48EE8A688B15 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75E37FB1EB4400A87B0D271 /* Feather.ttf */; };
 =======
+=======
+		42880D81AD524CC9BB8644EB /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */; };
+>>>>>>> remove uncommented codes
 		67D6DDEF4675477C8AAFD501 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92F45507C5684B7AA21B3C29 /* Rubik-Medium.ttf */; };
 		6AAB9BAB54A241A990560162 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53265F8F76F1449F9485FE06 /* Rubik-Regular.ttf */; };
 >>>>>>> add linear-gradient
@@ -70,8 +74,11 @@
 		C331A632E56C47C58C77DC8A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACDB2A1C81B4EE2ABE0137B /* libc++.tbd */; };
 		C8E9E911305748D8B791F81E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA03967964D4D3AA94CA189 /* libz.tbd */; };
 		E2078E2632A7437197ABB23F /* Metric-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52ED7B45379D4EA09B0E9983 /* Metric-Regular.otf */; };
+<<<<<<< HEAD
 		42880D81AD524CC9BB8644EB /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */; };
 >>>>>>> add linear-gradient
+=======
+>>>>>>> remove uncommented codes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +158,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNGestureHandler;
+		};
+		2CB4C91921B87A53005FAFA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C597C98AF66E4B858EA9F357 /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		2CB4C91B21B87A53005FAFA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C597C98AF66E4B858EA9F357 /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64AA15081EF7F30100718508;
+			remoteInfo = "BVLinearGradient-tvOS";
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -404,6 +425,7 @@
 		52ED7B45379D4EA09B0E9983 /* Metric-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Metric-Regular.otf"; path = "../js/assets/fonts/Metric-Regular.otf"; sourceTree = "<group>"; };
 		53265F8F76F1449F9485FE06 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Regular.ttf"; path = "../js/assets/fonts/Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		73C4A68D018D4645B4A2ABEC /* Metric-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Metric-Medium.otf"; path = "../js/assets/fonts/Metric-Medium.otf"; sourceTree = "<group>"; };
 >>>>>>> add linear-gradient
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -423,13 +445,17 @@
 =======
 		92F45507C5684B7AA21B3C29 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-Medium.ttf"; path = "../js/assets/fonts/Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		C597C98AF66E4B858EA9F357 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		C5B91AD2E25748C69379E045 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		D2A82B889A474056A2FF6E2D /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
 		F0C40AF84F0242C6AE02615F /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		F6543DA095FB4595B6994BAA /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		C597C98AF66E4B858EA9F357 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 >>>>>>> add linear-gradient
+=======
+>>>>>>> remove uncommented codes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -612,6 +638,7 @@
 			children = (
 				C5B91AD2E25748C69379E045 /* libRNGestureHandler.a */,
 				F6543DA095FB4595B6994BAA /* libRealmReact.a */,
+				68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -628,6 +655,15 @@
 			isa = PBXGroup;
 			children = (
 				2CB4C8BF21B85D9A005FAFA6 /* libRNGestureHandler.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CB4C91521B87A52005FAFA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4C91A21B87A53005FAFA6 /* libBVLinearGradient.a */,
+				2CB4C91C21B87A53005FAFA6 /* libBVLinearGradient.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -878,6 +914,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 2CB4C91521B87A52005FAFA6 /* Products */;
+					ProjectRef = C597C98AF66E4B858EA9F357 /* BVLinearGradient.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -1013,6 +1053,20 @@
 			fileType = archive.ar;
 			path = libRNGestureHandler.a;
 			remoteRef = 2CB4C8BE21B85D9A005FAFA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2CB4C91A21B87A53005FAFA6 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = 2CB4C91921B87A53005FAFA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2CB4C91C21B87A53005FAFA6 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = 2CB4C91B21B87A53005FAFA6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
