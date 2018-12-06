@@ -1,9 +1,7 @@
 import React from "react";
 import {
   createStackNavigator,
-  createBottomTabNavigator,
-  createSwitchNavigator,
-  createAppContainer
+  createBottomTabNavigator
 } from "react-navigation";
 import MainPageScreen from "../screens/MainPage";
 import PosesScreen from "../screens/Poses";
@@ -14,23 +12,9 @@ import DailyReportsScreen from "../screens/DailyReports";
 import CompletedChallenegesScreen from "../screens/CompletedChallenges";
 import RemindersScreen from "../screens/Reminders";
 import AboutScreen from "../screens/About";
-import SignInScreen from "../screens/SignIn";
 import EditProfileScreen from "../screens/EditProfile";
-import SignUpScreen from "../screens/SignUp";
 import { sharedNavigationOptions } from "./config";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
-const AuthStack = createStackNavigator(
-  {
-    SignIn: SignInScreen,
-    signUp: SignUpScreen
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => ({
-      ...sharedNavigationOptions(navigation)
-    })
-  }
-);
 
 const MainStack = createStackNavigator(
   {
@@ -72,7 +56,7 @@ const ProfileStack = createStackNavigator(
   }
 );
 
-const TabNav = createBottomTabNavigator(
+export const AppStack = createBottomTabNavigator(
   {
     Poses: PosesStack,
     Main: MainStack,
@@ -80,7 +64,7 @@ const TabNav = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+      tabBarIcon: ({ horizontal, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === "Main") {
@@ -104,17 +88,5 @@ const TabNav = createBottomTabNavigator(
       inactiveTintColor: "gray",
       style: { backgroundColor: "black" }
     }
-  }
-);
-
-const AppStack = TabNav;
-
-export default createSwitchNavigator(
-  {
-    Auth: AuthStack,
-    App: AppStack
-  },
-  {
-    initialRouteName: "Auth"
   }
 );
