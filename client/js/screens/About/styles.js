@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { globalStyles } from "../../../config/styles";
-import { colors } from "../../../config/styles";
+import { globalStyles } from "../../config/styles";
+import { colors } from "../../config/styles";
 
 const styles = StyleSheet.create({
   container: globalStyles.container,
