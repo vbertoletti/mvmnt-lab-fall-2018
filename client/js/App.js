@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
-import Signup from "./screens/Signup";
+import MainPage from "../js/screens/MainPage";
 
 export default class App extends Component {
   render() {
     return (
       <View>
-        <Signup />
+        <MainPage />
       </View>
     );
   }
