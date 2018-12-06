@@ -10,8 +10,6 @@ export const typography = {
   baseSize: 16,
   fontMainH1: "Rubik-Regular",
   fontMainH2: "Rubik-Medium"
-  // fontAccentH3: "Metric-Regular",
-  // fontButton: "Metric-Medium"
 };
 
 export const globalStyles = StyleSheet.create({
