@@ -1,37 +1,48 @@
 import React from "react";
-import { Platform } from "react-native";
 import {
-    createStackNavigator,
-    createBottomTabNavigator
+  createStackNavigator,
+  createBottomTabNavigator,
+  createSwitchNavigator,
+  createAppContainer
 } from "react-navigation";
-import MainPageScreen from '../screens/MainPage';
-import PosesScreen from '../screens/Poses';
-import ProfileScreen from '../screens/Profile';
-import PosesDetailsScreen from '../screens/PosesDetails';
-import WorkoutSessionScreen from '../screens/WorkOutSession';
-import DailyReportsScreen from '../screens/DailyReports';
-import CompletedChallenegesScreen from '../screens/CompletedChallenges';
-import RemindersScreen from '../screens/Reminders';
-import AboutScreen from '../screens/About';
-import SignInScreen from '../screens/SignIn';
-import EditProfileScreen from '../screens/EditProfile';
-import SignUpScreen from '../screens/SignUp'
+import MainPageScreen from "../screens/MainPage";
+import PosesScreen from "../screens/Poses";
+import ProfileScreen from "../screens/Profile";
+import PosesDetailsScreen from "../screens/PosesDetails";
+import WorkoutSessionScreen from "../screens/WorkOutSession";
+import DailyReportsScreen from "../screens/DailyReports";
+import CompletedChallenegesScreen from "../screens/CompletedChallenges";
+import RemindersScreen from "../screens/Reminders";
+import AboutScreen from "../screens/About";
+import SignInScreen from "../screens/SignIn";
+import EditProfileScreen from "../screens/EditProfile";
+import SignUpScreen from "../screens/SignUp";
 import { sharedNavigationOptions } from "./config";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-const MainStack = createStackNavigator(
-    {
-    Main: MainPageScreen,
-    WorkoutSession: WorkoutSessionScreen
-        
-    },
-    {
-        defaultNavigationOptions: ({ navigation }) => ({
-            ...sharedNavigationOptions(navigation)
-        })
-    }
+const AuthStack = createStackNavigator(
+  {
+    SignIn: SignInScreen,
+    signUp: SignUpScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
 );
 
+const MainStack = createStackNavigator(
+  {
+    Main: MainPageScreen,
+    WorkoutSession: WorkoutSessionScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
 
 const PosesStack = createStackNavigator(
   {
@@ -52,9 +63,7 @@ const ProfileStack = createStackNavigator(
     CompletedChalleneges: CompletedChallenegesScreen,
     Reminders: RemindersScreen,
     About: AboutScreen,
-    EditProfile: EditProfileScreen,
-    SignIn: SignInScreen,
-    signUp: SignUpScreen
+    EditProfile: EditProfileScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -63,7 +72,7 @@ const ProfileStack = createStackNavigator(
   }
 );
 
-export default createBottomTabNavigator(
+const tabnav = createBottomTabNavigator(
   {
     Poses: PosesStack,
     Main: MainStack,
@@ -96,4 +105,18 @@ export default createBottomTabNavigator(
       style: { backgroundColor: "black" }
     }
   }
+);
+
+const AppStack = tabnav;
+
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      Auth: AuthStack,
+      App: AppStack
+    },
+    {
+      initialRouteName: "Auth"
+    }
+  )
 );

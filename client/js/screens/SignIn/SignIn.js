@@ -13,6 +13,13 @@ const SignIn = ({ navigation }) => {
       >
         <Text>Sign Up</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("App");
+        }}
+      >
+        <Text>Log in</Text>
+      </TouchableOpacity>
     </View>
   );
 };

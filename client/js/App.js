@@ -9,6 +9,6 @@ export default class App extends Component {
       <ApolloProvider client={client}>
         <AppNavigator />
       </ApolloProvider>
-    )
+    );
   }
 }
