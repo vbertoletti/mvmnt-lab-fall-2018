@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Signup from "./Signup";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import { View } from "react-native";
 
 const SignupMutation = gql`
   mutation CreateUser(
@@ -28,10 +27,9 @@ class SignupContainer extends Component {
     return (
       <Mutation mutation={SignupMutation}>
         {(createUser, { data }) => (
-          <View>
+          <Fragment>
             <Signup signup={createUser} />
-            {console.log("this is it", data)}
-          </View>
+          </Fragment>
         )}
       </Mutation>
     );
