@@ -12,7 +12,7 @@ const MainPage = ({ navigation }) => {
         }}
       >
         <Text>To WorkoutSession</Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
     </React.Fragment>
   );
 };
