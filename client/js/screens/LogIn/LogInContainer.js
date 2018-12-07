@@ -14,6 +14,9 @@ const LoginMutation = gql`
 `;
 
 class LoginContainer extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <Mutation mutation={LoginMutation}>

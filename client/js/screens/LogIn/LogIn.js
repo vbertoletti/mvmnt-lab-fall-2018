@@ -13,13 +13,15 @@ import {
 import styles from "./styles";
 
 const showResults = async (values, login) => {
-  await login({ variables: values }).catch(error => {
+  try {
+    await login({ variables: values });
+  } catch (error) {
     Alert.alert(
       "Wrong email or password",
       "please re-enter your username or password",
       [{ text: "Got it" }]
     );
-  });
+  }
 };
 
 const required = value => (value ? undefined : "* Required Field");
