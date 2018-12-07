@@ -23,6 +23,9 @@ const SignupMutation = gql`
 `;
 
 class SignUpContainer extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <Mutation mutation={SignupMutation}>

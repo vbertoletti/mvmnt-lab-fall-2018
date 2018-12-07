@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
+    paddingTop: 30
   },
   input: {
     color: "white",

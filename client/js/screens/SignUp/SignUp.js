@@ -4,7 +4,8 @@ import {
   ImageBackground,
   TextInput,
   TouchableOpacity,
-  Alert
+  Alert,
+  View
 } from "react-native";
 import styles from "./styles";
 import { Form, Field } from "react-final-form";
