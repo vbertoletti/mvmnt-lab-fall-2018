@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Login from "./Login";
 import gql from "graphql-tag";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { Mutation } from "react-apollo";
 
 const LoginMutation = gql`

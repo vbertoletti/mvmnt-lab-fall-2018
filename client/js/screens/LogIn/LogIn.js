@@ -29,11 +29,14 @@ const Login = ({ login }) => {
     <Fragment>
       <StatusBar barStyle="light-content" />
       <ImageBackground
-        source={require("./background.png")}
+        source={require("../../assets/images/background.png")}
         style={styles.background}
       >
         <View>
-          <Image source={require("./logo.png")} style={styles.companyLogo} />
+          <Image
+            source={require("../../assets/images/logo.png")}
+            style={styles.companyLogo}
+          />
         </View>
         <View style={styles.loginForm}>
           <Form onSubmit={values => showResults(values, login)}>
