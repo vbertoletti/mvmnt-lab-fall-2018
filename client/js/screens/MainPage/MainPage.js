@@ -18,10 +18,6 @@ const MainPage = () => {
       </View>
     </Fragment>
   );
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 };
 
 export default MainPage;
