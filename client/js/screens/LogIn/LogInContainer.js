@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Login from "./Login";
+import Login from "./LogIn";
 import gql from "graphql-tag";
 import { View } from "react-native";
 import { Mutation } from "react-apollo";
@@ -14,6 +14,9 @@ const LoginMutation = gql`
 `;
 
 class LoginContainer extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <Mutation mutation={LoginMutation}>
