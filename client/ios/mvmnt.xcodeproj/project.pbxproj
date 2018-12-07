@@ -27,11 +27,7 @@
 		1B2540A4082D4CF38F32E1B5 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6543DA095FB4595B6994BAA /* libRealmReact.a */; };
 		21661A4129E040ADBAC4FF64 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 842FB95BF666445DB7A38508 /* MaterialCommunityIcons.ttf */; };
 		28738331207F4625AD3EDCD4 /* Metric-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73C4A68D018D4645B4A2ABEC /* Metric-Medium.otf */; };
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 		2C232C10A6FF4FB0A51257AB /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8CA824241D791556B9A /* Ionicons.ttf */; };
->>>>>>> set up structure of main page and fix code in signup
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -45,9 +41,6 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* mvmntTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mvmntTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		316E9D54EBCC4F06B1DD67EA /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F8576B92D324441AA9B133D /* MaterialCommunityIcons.ttf */; };
 		33AE68C8C2164ED3AE755491 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A11C2AD2C4F57A4D7F4A6 /* EvilIcons.ttf */; };
 		3867791E31F348808ACC8E85 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 800F446B1F834584BAB76ACF /* Roboto_medium.ttf */; };
@@ -55,22 +48,8 @@
 		59360AD3D49549B1AED2C803 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 566DC447B1334C939485646A /* Ionicons.ttf */; };
 		652B840540304CEAAAC23EF4 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8445284DE9C0466A9C441543 /* Foundation.ttf */; };
 		7BF46020E4BB48EE8A688B15 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75E37FB1EB4400A87B0D271 /* Feather.ttf */; };
-=======
-=======
-		42880D81AD524CC9BB8644EB /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */; };
->>>>>>> remove uncommented codes
 		67D6DDEF4675477C8AAFD501 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92F45507C5684B7AA21B3C29 /* Rubik-Medium.ttf */; };
 		6AAB9BAB54A241A990560162 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53265F8F76F1449F9485FE06 /* Rubik-Regular.ttf */; };
->>>>>>> add linear-gradient
-=======
-		3136BE272E8E4F7694D5F82E /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 633430F71A8043D8BFB4E93B /* EvilIcons.ttf */; };
-		42880D81AD524CC9BB8644EB /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */; };
-		502D7986242547E59F0827DA /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A69BDDBE8124014881523FC /* Octicons.ttf */; };
-		56244B748BE54394B302F244 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98E47F50A9084F8CBCB631ED /* AntDesign.ttf */; };
-		65DFAAB51E1141929E1B9D59 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6FE79C06D9B42A2B665B24C /* Feather.ttf */; };
-		67D6DDEF4675477C8AAFD501 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92F45507C5684B7AA21B3C29 /* Rubik-Medium.ttf */; };
-		6AAB9BAB54A241A990560162 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53265F8F76F1449F9485FE06 /* Rubik-Regular.ttf */; };
->>>>>>> set up structure of main page and fix code in signup
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9370F08EA9244AAA80A3BBE3 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F887785A3A24B0BA53D958A /* Zocial.ttf */; };
 		9D07A8243CC34B4C9DB9C5B7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57D7E35B8DC94CD7BBACB8CD /* Entypo.ttf */; };
@@ -80,31 +59,15 @@
 		C331A632E56C47C58C77DC8A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACDB2A1C81B4EE2ABE0137B /* libc++.tbd */; };
 		C6F4B81780BA4473B2883EDA /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7C57A5B9C54B8EA5019CEA /* libRNGestureHandler.a */; };
 		C8E9E911305748D8B791F81E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA03967964D4D3AA94CA189 /* libz.tbd */; };
-<<<<<<< HEAD
 		E2078E2632A7437197ABB23F /* Metric-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52ED7B45379D4EA09B0E9983 /* Metric-Regular.otf */; };
-<<<<<<< HEAD
-<<<<<<< HEAD
 		42880D81AD524CC9BB8644EB /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */; };
->>>>>>> add linear-gradient
-=======
->>>>>>> remove uncommented codes
-=======
 		9EE52C8FF62B42D5A46D0C6F /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3712052C394FF285BD6625 /* libRNVectorIcons.a */; };
-=======
->>>>>>> set up structure of main page and fix code in signup
 		D507A0E8D5BC47DB9C98DF2A /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382C96850E4A4F4A89F6A018 /* libRNVectorIcons-tvOS.a */; };
 		D5C78844BD584F46BABD01B1 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D88F2D10964AD99816E312 /* FontAwesome5_Brands.ttf */; };
 		DA85A7ECA19D462781A1DBF6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C6480C23B4B4F8691FC8C80 /* SimpleLineIcons.ttf */; };
 		E2078E2632A7437197ABB23F /* Metric-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52ED7B45379D4EA09B0E9983 /* Metric-Regular.otf */; };
 		E423012ADB97454381EF0D9A /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6769BDFF715942C79F9D4315 /* FontAwesome5_Regular.ttf */; };
 		F1976EE668D44C298ACCD705 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3768D2569D14DF7A5972BE3 /* MaterialIcons.ttf */; };
-<<<<<<< HEAD
-		502D7986242547E59F0827DA /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A69BDDBE8124014881523FC /* Octicons.ttf */; };
-		DA85A7ECA19D462781A1DBF6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C6480C23B4B4F8691FC8C80 /* SimpleLineIcons.ttf */; };
-		9370F08EA9244AAA80A3BBE3 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F887785A3A24B0BA53D958A /* Zocial.ttf */; };
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -463,10 +426,6 @@
 		6769BDFF715942C79F9D4315 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		73C4A68D018D4645B4A2ABEC /* Metric-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Metric-Medium.otf"; path = "../js/assets/fonts/Metric-Medium.otf"; sourceTree = "<group>"; };
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
->>>>>>> set up structure of main page and fix code in signup
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A69BDDBE8124014881523FC /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -484,15 +443,9 @@
 		D2A82B889A474056A2FF6E2D /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
 		D85808958ED54F148F45CC28 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		F6543DA095FB4595B6994BAA /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 		C597C98AF66E4B858EA9F357 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		68B49C8DBEFC40F4872EEFBE /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
->>>>>>> add linear-gradient
-=======
->>>>>>> remove uncommented codes
-=======
+
 		A2D3EFBDB6DC43B7B1D9F809 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; name = "RNVectorIcons.xcodeproj"; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		8A3712052C394FF285BD6625 /* libRNVectorIcons.a */ = {isa = PBXFileReference; name = "libRNVectorIcons.a"; path = "libRNVectorIcons.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		382C96850E4A4F4A89F6A018 /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; name = "libRNVectorIcons-tvOS.a"; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
@@ -511,10 +464,8 @@
 		7A69BDDBE8124014881523FC /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2C6480C23B4B4F8691FC8C80 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5F887785A3A24B0BA53D958A /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 		F86B9DF78B214A30B89CF31D /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
->>>>>>> set up structure of main page and fix code in signup
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -809,10 +760,6 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A09104F2350345889BA63B40 /* Resources */,
 				2CB4C88F21B85CCA005FAFA6 /* Recovered References */,
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
->>>>>>> set up structure of main page and fix code in signup
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -858,18 +805,12 @@
 		};
 		ADBDB9201DFEBF0600ED6528 /* Products */ = {
 			isa = PBXGroup;
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
->>>>>>> set up structure of main page and fix code in signup
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
-<<<<<<< HEAD
-<<<<<<< HEAD
 		};
 		A4894A4521B7395600C2F536 /* Recovered References */ = {
 			isa = PBXGroup;
@@ -888,10 +829,6 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
-=======
->>>>>>> add linear-gradient
-=======
->>>>>>> set up structure of main page and fix code in signup
 		};
 /* End PBXGroup section */
 
@@ -1542,15 +1479,8 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
 				);
 				INFOPLIST_FILE = mvmntTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1558,19 +1488,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1591,15 +1508,8 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
 				);
 				INFOPLIST_FILE = mvmntTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1607,19 +1517,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1641,15 +1538,9 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
+
 				);
 				INFOPLIST_FILE = mvmnt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1673,15 +1564,9 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
+
 				);
 				INFOPLIST_FILE = mvmnt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1712,34 +1597,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
+
 				);
 				INFOPLIST_FILE = "mvmnt-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1769,34 +1635,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
+
 				);
 				INFOPLIST_FILE = "mvmnt-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1825,34 +1672,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
+
 				);
 				INFOPLIST_FILE = "mvmnt-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1881,34 +1709,15 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/realm/src/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-<<<<<<< HEAD
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
->>>>>>> set up structure of main page and fix code in signup
+
 				);
 				INFOPLIST_FILE = "mvmnt-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
->>>>>>> add linear-gradient
-=======
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
->>>>>>> set up the mainpage ui and install and link vector icon
-=======
->>>>>>> set up structure of main page and fix code in signup
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
