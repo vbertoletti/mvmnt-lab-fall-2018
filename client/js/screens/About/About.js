@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, Fragment } from "react-native";
 
 const About = () => {
   return <Text>I am the About Screen</Text>;
