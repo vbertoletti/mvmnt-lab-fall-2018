@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Login from "./LogIn";
+import Login from "./Login";
 import gql from "graphql-tag";
 import { View } from "react-native";
 import { Mutation } from "react-apollo";
