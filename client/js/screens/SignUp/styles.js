@@ -9,16 +9,13 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "white",
-    marginTop: 30,
-    textAlign: "center",
-    marginBottom: 30
+    textAlign: "center"
   },
   input: {
     color: "white",
     borderBottomWidth: 1,
     borderBottomColor: "white",
     margin: 25,
-    marginTop: 20,
     fontSize: 16
   },
   button: {
@@ -26,7 +23,6 @@ const styles = StyleSheet.create({
     height: 45,
     width: 250,
     borderRadius: 40,
-    marginTop: 30,
     alignSelf: "center"
   },
   text: {

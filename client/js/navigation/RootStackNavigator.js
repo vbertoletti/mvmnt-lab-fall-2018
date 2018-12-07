@@ -11,7 +11,7 @@ import { sharedNavigationOptions } from "./config";
 const AuthStack = createStackNavigator(
   {
     SignIn: SignInScreen,
-    signUp: SignUpScreen
+    SignUp: SignUpScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

@@ -9,7 +9,7 @@ import {
 import styles from "./styles";
 import { Form, Field } from "react-final-form";
 
-const onSubmit = async (values, signup) => {
+const inputResult = async (values, signup) => {
   await signup({ variables: values }).then(() => {
     Alert.alert("Register Complete!", "Thank You For Registering!", [
       { text: "Got it!" }
@@ -37,14 +37,13 @@ const validate = values => {
     errors.confirmPassword = "Required";
   }
   if (values.password !== values.confirmPassword) {
-    (error.password = "Does not match password"),
-      (error.confirmPassword = "Does not match password");
+    errors.confirmPassword = "Does not match password";
   }
 
   return errors;
 };
 
-const Signup = ({ signup }) => {
+const SignUp = ({ signup }) => {
   return (
     <Fragment>
       <ImageBackground
@@ -54,7 +53,7 @@ const Signup = ({ signup }) => {
         <Text style={styles.register}>REGISTER</Text>
         <Form
           validate={validate}
-          onSubmit={values => onSubmit(values, signup)}
+          onSubmit={values => inputResult(values, signup)}
           render={({ handleSubmit, pristine, invalid }) => (
             <Fragment>
               <Field name="firstname" validate={required}>
@@ -126,7 +125,7 @@ const Signup = ({ signup }) => {
               </Field>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => handleSubmit(values)}
+                onPress={() => handleSubmit(signup)}
               >
                 <Text style={styles.text}>REGISTER</Text>
               </TouchableOpacity>

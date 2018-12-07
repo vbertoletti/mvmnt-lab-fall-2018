@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import { StyleSheet } from "react-native";
-import { globalStyles } from "../../config/styles";
-=======
 import { StyleSheet, Dimensions } from "react-native";
 import { globalStyles } from "../../config/styles";
 var width = Dimensions.get("window").width;
 var height = Dimensions.get("window").height;
->>>>>>> set up the mainpage ui and install and link vector icon
 
 const styles = StyleSheet.create({
   container: globalStyles.container,
