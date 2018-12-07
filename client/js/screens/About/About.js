@@ -13,22 +13,22 @@ const About = () => {
       </View>
       <View style={styles.descriptionContainer}>
         <Text style={styles.description}>
-          Ground Control was brought to you by{" "}
+          Ground Control was brought to you by
           <Text style={styles.header}>MVMNT LAB </Text>Sports Performance based
           in Vancouver, BC.
         </Text>
         <Text style={styles.description}>
-          Visit our website{" "}
+          Visit our website
           <Text
             onPress={() => Linking.openURL("https://mvmtlab.com/")}
             style={styles.link}
           >
-            www.mvmtlab.com
+            {" www.mvmtlab.com"}
           </Text>
         </Text>
         <Text style={styles.footer}>
-          Loading screen artwork made by{" "}
-          <Text style={styles.link}>ARNO SCHURMANS</Text>
+          Loading screen artwork made by
+          <Text style={styles.link}> ARNO SCHURMANS</Text>
         </Text>
       </View>
     </View>

@@ -2,12 +2,15 @@ import { StyleSheet, Dimensions } from "react-native";
 import { globalStyles } from "../../config/styles";
 import { colors } from "../../config/styles";
 
+let width = Dimensions.get("window").width;
+let height = Dimensions.get("window").height;
+
 const styles = StyleSheet.create({
   container: globalStyles.container,
   navButton: {
     display: "flex",
     justifyContent: "center",
-    width: "100%",
+    width: width,
     height: 80,
     backgroundColor: "white",
     borderBottomWidth: 1,
@@ -15,8 +18,8 @@ const styles = StyleSheet.create({
     padding: 15
   },
   body: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
+    width: width,
+    height: height,
     backgroundColor: "#F2F2F2"
   },
   link: {
@@ -34,7 +37,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   footer: {
-    paddingTop: 50,
+    marginTop: 20,
+    justifyContent: "center",
     padding: 14,
     fontSize: 13
   }

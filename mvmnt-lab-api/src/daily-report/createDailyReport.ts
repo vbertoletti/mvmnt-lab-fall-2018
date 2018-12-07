@@ -16,8 +16,6 @@ interface EventData {
 }
 
 export default async (event: FunctionEvent<EventData>) => {
-  console.log(event);
-
   try {
     const graphcool = fromEvent(event);
     const api = graphcool.api("simple/v1");
@@ -46,7 +44,6 @@ export default async (event: FunctionEvent<EventData>) => {
 
     return { data: { dailyReport } };
   } catch (e) {
-    console.log(e);
     return { error: e };
   }
 };
