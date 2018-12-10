@@ -26,7 +26,7 @@ const showResults = async (values, login) => {
 
 const required = value => (value ? undefined : "* Required Field");
 
-const Login = ({ login }) => {
+const LogIn = ({ login }) => {
   return (
     <Fragment>
       <StatusBar barStyle="light-content" />
@@ -106,4 +106,4 @@ const Login = ({ login }) => {
   );
 };
 
-export default Login;
+export default LogIn;

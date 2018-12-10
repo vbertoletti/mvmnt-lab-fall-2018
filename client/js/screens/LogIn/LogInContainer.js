@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Login from "./Login";
+import LogIn from "./LogIn";
 import gql from "graphql-tag";
 import { View } from "react-native";
 import { Mutation } from "react-apollo";
@@ -22,7 +22,7 @@ class LoginContainer extends Component {
       <Mutation mutation={LoginMutation}>
         {authenticateUser => (
           <View>
-            <Login login={authenticateUser} />
+            <LogIn login={authenticateUser} />
           </View>
         )}
       </Mutation>

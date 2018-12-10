@@ -4,14 +4,14 @@ import {
   createStackNavigator
 } from "react-navigation";
 import { AppStack } from "./NavigationLayout";
-import SignInScreen from "../screens/Login";
+import SignInScreen from "../screens/LogIn";
 import SignUpScreen from "../screens/SignUp";
 import { sharedNavigationOptions } from "./config";
 
 const AuthStack = createStackNavigator(
   {
     SignIn: SignInScreen,
-    signUp: SignUpScreen
+    SignUp: SignUpScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
