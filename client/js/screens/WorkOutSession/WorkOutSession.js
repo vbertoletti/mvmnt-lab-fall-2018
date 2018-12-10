@@ -1,10 +1,14 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Image } from "react-native";
+import styles from "./styles";
 
-const WorkoutSession = () => {
+const WorkoutSession = ({ session }) => {
   return (
     <React.Fragment>
-      <Text>I am the WorkoutSession Screen</Text>
+      <Image
+        source={require("../../assets/images/videoPlaceholder.png")}
+        style={styles.video}
+      />
     </React.Fragment>
   );
 };

@@ -1,20 +1,25 @@
 import React, { Fragment } from "react";
-import { Text, View } from "react-native";
+import { Text, View, ImageBackground } from "react-native";
 import styles from "./styles";
-import { ImageBackground } from "react-native";
 import MainPageSessionCard from "../../components/MainPageSessionCard";
 
-const MainPage = () => {
+const MainPage = ({ session, navigation }) => {
   return (
     <Fragment>
-      <View style={styles.container}>
+      <View style={styles.root}>
         <ImageBackground
           source={require("../../assets/images/BigHeader.png")}
           style={styles.backgroundImage}
         >
-          <Text style={styles.text}>GROUND CONTROL</Text>
+          <View style={styles.container}>
+            <Text style={styles.text}>GROUND CONTROL</Text>
+            <View style={styles.progression}>
+              <Text style={styles.progressionDate}>29/30</Text>
+            </View>
+            <Text style={styles.progressionText}>Progress</Text>
+          </View>
         </ImageBackground>
-        <MainPageSessionCard style={styles.card} />
+        <MainPageSessionCard navigation={navigation} session={session} />
       </View>
     </Fragment>
   );
