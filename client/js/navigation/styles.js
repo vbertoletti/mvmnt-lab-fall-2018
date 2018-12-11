@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
-import { globalStyles } from "../../config/styles";
 
 const styles = StyleSheet.create({
-  container: globalStyles.container
+    icons: {
+        marginBottom: 4.4
+    }
+    
 });
-
 
 export default styles;
