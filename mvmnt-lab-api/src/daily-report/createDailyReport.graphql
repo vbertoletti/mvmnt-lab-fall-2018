@@ -1,0 +1,15 @@
+type CreateDailyReportPayload {
+  id: ID!
+}
+
+extend type Mutation {
+  addDailyReport(
+    userId: String!
+    pain: Int!
+    work: Int!
+    score: Float!
+    date: DateTime!
+    painDescription: String!
+    notes: String!
+  ): CreateDailyReportPayload
+}
