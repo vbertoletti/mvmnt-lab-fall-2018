@@ -80,7 +80,7 @@ const LogIn = ({ login }) => {
                 </Field>
 
                 <TouchableOpacity
-                  onPress={() => handleSubmit(values)}
+                  onPress={() => {handleSubmit(values)}}
                   style={styles.button}
                 >
                   <Text style={styles.loginButtons}>LOG IN</Text>
