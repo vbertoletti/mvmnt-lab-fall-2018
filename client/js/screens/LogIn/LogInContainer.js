@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import LogIn from "./LogIn";
 import gql from "graphql-tag";
-import { View } from "react-native";
 import { Mutation } from "react-apollo";
+import UserContext from "../../context/UserContext/UserProvider";
 
 const LoginMutation = gql`
   mutation AuthenticateUser($email: String!, $password: String!) {
@@ -20,10 +20,16 @@ class LoginContainer extends Component {
   render() {
     return (
       <Mutation mutation={LoginMutation}>
-        {authenticateUser => (
-          <View>
-            <LogIn login={authenticateUser} />
-          </View>
+        {login => (
+          <UserContext.Consumer>
+            {({ signin, token }) => {
+              if (token) {
+                this.props.navigation.navigate("App");
+              } else {
+                return <LogIn login={login} signin={signin} />;
+              }
+            }}
+          </UserContext.Consumer>
         )}
       </Mutation>
     );

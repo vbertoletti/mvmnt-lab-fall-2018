@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import realm from "../../config/models";
+import Realm from "../../config/models";
 
 const UserContext = React.createContext();
 class UserProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: "Test Token"
+      token: "Test Token",
+      token: "",
+      id: ""
     };
   }
 
@@ -14,22 +16,24 @@ class UserProvider extends Component {
     await this.queryUser();
   }
 
-  async login(token) {
-    await realm.write(() => {
-      // realm.create("User", { token: "changed it biaatch" });
-      this.setState({ token: token });
+  async storeSessionToken(token, id) {
+    await Realm.write(() => {
+      Realm.create("User", { id: id, token: token });
+      this.setState({ token: token, id: id });
     });
   }
 
-  async signout(token) {
-    await realm.write(() => {
-      realm.delete(realm.objectForPrimaryKey("User", token));
+  async removeUserIdToken(id) {
+    await Realm.write(() => {
+      Realm.delete(Realm.objectForPrimaryKey("User", id));
+      this.setState({ id: "", token: "" });
     });
   }
 
   async queryUser() {
-    // let user = realm.objects("User").map(user => user.token);
-    // await this.setState({ token: "query bits and beery" });
+    let userToken = await Realm.objects("User").map(user => user.token);
+    let userId = await Realm.objects("User").map(user => user.id);
+    this.setState({ token: userToken, id: userId });
   }
 
   render() {
@@ -37,8 +41,8 @@ class UserProvider extends Component {
       <UserContext.Provider
         value={{
           ...this.state,
-          login: this.login.bind(this),
-          signout: this.signout.bind(this),
+          storeSessionToken: this.storeSessionToken.bind(this),
+          removeUserIdToken: this.removeUserIdToken.bind(this),
           queryUser: this.queryUser.bind(this),
           token: this.state.token
         }}

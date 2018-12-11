@@ -7,26 +7,13 @@ import {
   TouchableOpacity,
   TextInput,
   Text,
-  StatusBar,
-  Alert
+  StatusBar
 } from "react-native";
 import styles from "./styles";
 
-const showResults = async (values, login) => {
-  try {
-    await login({ variables: values });
-  } catch (error) {
-    Alert.alert(
-      "Wrong email or password",
-      "please re-enter your username or password",
-      [{ text: "Got it" }]
-    );
-  }
-};
-
 const required = value => (value ? undefined : "* Required Field");
 
-const LogIn = ({ login }) => {
+const LogIn = ({ login, storeSessionToken }) => {
   return (
     <Fragment>
       <StatusBar barStyle="light-content" />
@@ -41,7 +28,23 @@ const LogIn = ({ login }) => {
           />
         </View>
         <View style={styles.loginForm}>
-          <Form onSubmit={values => showResults(values, login)}>
+          <Form
+            onSubmit={async values => {
+              try {
+                let response = await login({ variables: values });
+                storeSessionToken(
+                  response.data.authenticateUser.token,
+                  response.data.authenticateUser.id
+                );
+              } catch (error) {
+                Alert.alert(
+                  "Wrong email or password",
+                  "please re-enter your username or password",
+                  [{ text: "Got it" }]
+                );
+              }
+            }}
+          >
             {({ handleSubmit, values }) => (
               <View>
                 <Field name="email" validate={required}>
@@ -80,7 +83,9 @@ const LogIn = ({ login }) => {
                 </Field>
 
                 <TouchableOpacity
-                  onPress={() => {handleSubmit(values)}}
+                  onPress={() => {
+                    handleSubmit(values);
+                  }}
                   style={styles.button}
                 >
                   <Text style={styles.loginButtons}>LOG IN</Text>
