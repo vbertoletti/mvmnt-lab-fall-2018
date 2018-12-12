@@ -44,7 +44,7 @@ const ProfileStack = createStackNavigator(
   {
     Profile: ProfileScreen,
     DailyReports: DailyReportsScreen,
-    CompletedChalleneges: CompletedChallenegesScreen,
+    CompletedChallenges: CompletedChallenegesScreen,
     Reminders: RemindersScreen,
     About: AboutScreen,
     EditProfile: EditProfileScreen
@@ -57,10 +57,7 @@ const ProfileStack = createStackNavigator(
 );
 
 export const AppStack = createBottomTabNavigator(
-  { Poses: PosesStack,
-    Main: MainStack,
-    Profile: ProfileStack 
-  },
+  { Poses: PosesStack, Main: MainStack, Profile: ProfileStack },
   {
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {
