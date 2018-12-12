@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import DailyReports from "./DailyReports";
 import gql from "graphql-tag";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { Query } from "react-apollo";
+import styles from "./styles";
 
 const DailyReportQuery = gql`
-  query AllDailyReports($id: String!) {
-    allDailyReport(email: $email, password: $password) {
-      token
+  query allDailyReports {
+    allDailyReports {
       id
+      date
+      pain
+      score
+      userId
+      work
+      painDescription
+      notes
     }
   }
 `;
@@ -24,11 +31,19 @@ class DailyReportsContainer extends Component {
   render() {
     return (
       <Query query={DailyReportQuery}>
-        {dailyReportsQuery => (
-          <View>
-            <DailyReports dailyReportsQuery={dailyReportsQuery} />
-          </View>
-        )}
+        {({ loading, error, data }) => {
+          if (loading)
+            return (
+              <View style={styles.centerContainer}>
+                <Text> Loading</Text>
+              </View>
+            );
+          if (error) return `${error}`;
+          if (data) {
+            console.log(data);
+            return <DailyReports data={data} />;
+          }
+        }}
       </Query>
     );
   }
