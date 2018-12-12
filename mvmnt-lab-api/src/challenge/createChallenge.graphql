@@ -1,0 +1,11 @@
+type CreateChallengePayload {
+  id: ID!
+}
+
+extend type Mutation {
+  addChallenge(
+    userId: String!
+    score: [Float!]
+    date: DateTime!
+  ): CreateChallengePayload
+}
