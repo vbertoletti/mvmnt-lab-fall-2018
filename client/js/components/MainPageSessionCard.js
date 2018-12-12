@@ -13,7 +13,13 @@ const MainPageSessionCard = () => {
           <Text style={styles.header}>HEAVY</Text>
         </TouchableOpacity>
       </View>
+<<<<<<< HEAD
 
+=======
+      <Text style={styles.text}>PLACE HOLDER</Text>
+      <Text style={styles.text}>PLACE HOLDER</Text>
+      <Text style={styles.text}>PLACE HOLDER</Text>
+>>>>>>> add place holder
       <Text style={styles.text}>DAY 30</Text>
     </View>
   );
