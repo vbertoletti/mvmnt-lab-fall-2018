@@ -10,8 +10,8 @@ export default class App extends Component {
     return (
       <ApolloProvider client={client}>
         <UserProvider>
-          <Profile />
-          {/* <AppNavigator /> */}
+          {/* <Profile /> */}
+          <AppNavigator />
         </UserProvider>
       </ApolloProvider>
     );
