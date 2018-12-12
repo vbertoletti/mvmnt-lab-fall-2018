@@ -18,7 +18,6 @@ export default async (event: FunctionEvent<EventData>) => {
 
     const { userId, score, date } = event.data;
 
-    // create new pose
     const challenge = await createGraphcoolChallenge(api, userId, score, date);
 
     return { data: { challenge } };

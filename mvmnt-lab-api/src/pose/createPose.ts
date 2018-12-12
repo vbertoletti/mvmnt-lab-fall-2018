@@ -19,7 +19,6 @@ export default async (event: FunctionEvent<EventData>) => {
 
     const { icon, title, duration, video } = event.data;
 
-    // create new pose
     const pose = await createGraphcoolPose(api, icon, title, duration, video);
 
     return { data: { pose } };

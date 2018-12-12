@@ -40,7 +40,6 @@ class DailyReportsContainer extends Component {
             );
           if (error) return `${error}`;
           if (data) {
-            console.log(data);
             return <DailyReports data={data} />;
           }
         }}
