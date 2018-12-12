@@ -1,6 +1,20 @@
 import React, { Component } from "react";
 import Poses from "./Poses";
 import propTypes from "prop-types";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
+import { ActivityIndicator } from "react-native";
+import styles from './styles'
+
+const PosesQuery = gql`
+  query allPoses {
+    allPoses {
+      id
+      icon
+      title
+    }
+  }
+`;
 
 class PosesContainer extends Component {
   static navigationOptions = {
@@ -11,7 +25,19 @@ class PosesContainer extends Component {
     }
   };
   render() {
-    return <Poses navigation={this.props.navigation} />;
+    return (
+      <Query query={PosesQuery}>
+        {({ loading, error, data }) => {
+          if (loading)
+            return (
+              <ActivityIndicator style={styles.spinner}/>
+            );
+          if (data) {
+            return <Poses navigation={this.props.navigation} data={data.allPoses} />;
+          }
+    }}
+      </Query>
+    );
   }
 }
 

@@ -5,6 +5,7 @@ import { UserProvider } from "./context/UserContext";
 import AppNavigator from "./navigation/RootStackNavigator";
 import DailyReports from "./screens/DailyReports";
 
+
 export default class App extends Component {
   render() {
     return (
