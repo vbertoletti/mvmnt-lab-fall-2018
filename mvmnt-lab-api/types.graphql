@@ -29,3 +29,10 @@ type DailyReport @model {
   painDescription: String!
   notes: String!
 }
+
+type Challenge @model {
+  id: ID! @isUnique
+  userId: String!
+  score: [Float!]
+  date: DateTime!
+}

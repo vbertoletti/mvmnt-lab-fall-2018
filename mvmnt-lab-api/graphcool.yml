@@ -49,6 +49,12 @@ functions:
     handler:
       code: src/daily-report/createDailyReport.ts
 
+  createChallenge:
+    type: resolver
+    schema: src/challenge/createChallenge.graphql
+    handler:
+      code: src/challenge/createChallenge.ts
+
 # Model/Relation permissions are used to limit the API access
 # To take the burden of thinking about those while development, we
 # preconfigured the wildcard ("*") permission that allows everything

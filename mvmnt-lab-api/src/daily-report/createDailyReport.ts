@@ -30,7 +30,6 @@ export default async (event: FunctionEvent<EventData>) => {
       notes
     } = event.data;
 
-    // create new pose
     const dailyReport = await createGraphcoolDailyReport(
       api,
       userId,
