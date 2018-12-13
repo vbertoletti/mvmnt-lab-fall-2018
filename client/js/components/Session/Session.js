@@ -3,16 +3,20 @@ import { View, Text, Image } from "react-native";
 import styles from "./styles";
 
 const Session = ({ session }) => {
+  const thumbnail = {
+    Bear: require("../../assets/images/icons/Bear.png"),
+    Superbug: require("../../assets/images/icons/Superbug.png")
+  };
   return (
     <View style={styles.sessionContainer}>
       <View style={styles.session}>
-        <Image source={require("../../assets/images/icons/Bear.png")} />
+        <Image source={thumbnail[session.icon]} />
       </View>
       <View style={styles.session}>
-        <Text>{session.title}</Text>
+        <Text style={styles.title}>{session.title}</Text>
       </View>
       <View style={styles.session}>
-        <Text>{session.duration}</Text>
+        <Text style={styles.duration}>{session.duration}</Text>
       </View>
     </View>
   );

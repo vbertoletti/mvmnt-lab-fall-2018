@@ -28,7 +28,6 @@ class DailyReports extends Component {
             </View>
           );
         })}
-        {console.log("Derp", this.props.data)}
       </View>
     );
   }
