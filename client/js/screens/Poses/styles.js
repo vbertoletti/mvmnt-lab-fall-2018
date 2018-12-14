@@ -4,27 +4,36 @@ const { height, width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: globalStyles.container,
-  Pose: {
+  pose: {
     height: height / 6,
     width,
-    alignItems: "center",
-    justifyContent: "center"
+    flexDirection: 'row',
+    marginLeft: width / 24
   },
   title: {
     fontSize: 20,
-    fontWeight: "600"
+    fontWeight: "600",
+    alignSelf: 'center',
+    marginLeft: width/6,
+    width: width / 4,
+    textAlign: 'center'
   },
   spinner: {
     height,
     justifyContent: "center"
   },
   image: {
-    position: "absolute",
-    left: 30
+    justifyContent: 'flex-start',
+    alignSelf: 'center'
   },
   arrow: {
-    position: "absolute",
-    right: 20
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
+    marginLeft: width / 5
+  },
+  seperator: {
+    height: 1,
+    backgroundColor: "#CED0CE"
   }
 });
 

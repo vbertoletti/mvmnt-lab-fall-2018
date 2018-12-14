@@ -25,22 +25,19 @@ class PosesContainer extends Component {
     }
   };
   render() {
-    return (
-      <Query query={PosesQuery}>
+    return <Query query={PosesQuery}>
         {({ loading, error, data }) => {
-          if (loading)
-            return (
-              <ActivityIndicator style={styles.spinner}/>
-            );
+          if (loading) return <ActivityIndicator style={styles.spinner} />;
+          if (error) {
+            return `${error}`;
+          }
           if (data) {
             return <Poses navigation={this.props.navigation} data={data.allPoses} />;
           }
-    }}
-      </Query>
-    );
+        }}
+      </Query>;
   }
 }
-
 PosesContainer.propTypes = {
   navigation: propTypes.object.isRequired
 };

@@ -5,42 +5,40 @@ import styles from "./styles";
 
 const thumbnail = {
   Bear: require("../../assets/images/icons/Bear.png"),
-  Superbug: require("../../assets/images/icons/Superbug.png")
+  Superbug: require("../../assets/images/icons/Superbug.png"),
+  Flamingo: require("../../assets/images/icons/Flamingo.png"),
+  Gargoyle: require("../../assets/images/icons/Gargoyle.png"),
+  StraightJacket: require("../../assets/images/icons/Straight Jacket.png")
 };
 
 renderSeparator = () => {
   return (
     <View
-      style={{
-        height: 1,
-        backgroundColor: "#CED0CE"
-      }}
+      style={styles.seperator}
     />
   );
 };
 
 const Poses = ({ navigation, data }) => {
-  _keyExtractor = item => item.id;
+  const keyExtractor = item => item.id;
   return (
     <React.Fragment>
       <FlatList
         data={data}
-        keyExtractor={this._keyExtractor}
+        keyExtractor={keyExtractor}
         ItemSeparatorComponent={this.renderSeparator}
         renderItem={({ item }) => (
-          <View>
+          <View style={styles.pose}>
             <TouchableOpacity
-              style={styles.Pose}
+              style={styles.pose}
               onPress={() => {
                 navigation.navigate("PosesDetails");
               }}
             >
-              {console.log(item.icon)}
               <Image
                 source={thumbnail[item.icon]}
                 style={styles.image}
               />
-              {console.log(item.icon)}
               <Text style={styles.title}>{item.title}</Text>
               <Image
                 source={require("../../assets/images/blackarrow.png")}
@@ -55,7 +53,8 @@ const Poses = ({ navigation, data }) => {
 };
 
 Poses.propTypes = {
-  navigation: propTypes.object.isRequired
+  navigation: propTypes.object.isRequired,
+  data: propTypes.array.isRequired
 };
 
 export default Poses;
