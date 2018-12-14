@@ -6,8 +6,8 @@ class UserProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: "",
-      id: ""
+      token: null,
+      id: null
     };
   }
 

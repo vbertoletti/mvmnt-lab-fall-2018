@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import moment from "moment";
 import styles from "./styles";
+import PropTypes from "prop-types";
 
 class DailyReportModal extends Component {
   constructor(props) {
@@ -90,3 +91,19 @@ class DailyReportModal extends Component {
 }
 
 export default DailyReportModal;
+
+DailyReportModal.defaultProps = {
+  userId: "",
+  allChallenges: null,
+  createChallenge: null,
+  createReport: null,
+  updateChallenge: null
+};
+
+DailyReportModal.propTypes = {
+  userId: PropTypes.string,
+  allChallenges: PropTypes.object,
+  createChallenge: PropTypes.func,
+  createReport: PropTypes.func,
+  updateChallenge: PropTypes.func
+};

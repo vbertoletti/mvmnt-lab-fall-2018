@@ -11,8 +11,7 @@ class DailyReportModalContainer extends Component {
   render() {
     return (
       <UserContext.Consumer>
-        {id => {
-          console.log("ID", id);
+        {({ id }) => {
           return (
             <DailyReportModal
               createReport={this.props.createReport}
