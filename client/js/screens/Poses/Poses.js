@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import propTypes from "prop-types";
+import DailyReportModal from "../../components/DailyReportModal";
 
 const Poses = ({ navigation }) => {
   return (
@@ -13,6 +14,7 @@ const Poses = ({ navigation }) => {
       >
         <Text>To PosesDetails</Text>
       </TouchableOpacity>
+      <DailyReportModal />
     </React.Fragment>
   );
 };

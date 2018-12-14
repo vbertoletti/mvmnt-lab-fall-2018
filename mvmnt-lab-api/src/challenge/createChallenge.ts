@@ -8,7 +8,9 @@ interface Challenge {
 interface EventData {
   userId: string;
   score: [number];
-  date: Date;
+  startDate: Date;
+  endDate: Date;
+  daysBetween: number;
 }
 
 export default async (event: FunctionEvent<EventData>) => {
@@ -16,9 +18,16 @@ export default async (event: FunctionEvent<EventData>) => {
     const graphcool = fromEvent(event);
     const api = graphcool.api("simple/v1");
 
-    const { userId, score, date } = event.data;
+    const { userId, score, startDate, endDate, daysBetween } = event.data;
 
-    const challenge = await createGraphcoolChallenge(api, userId, score, date);
+    const challenge = await createGraphcoolChallenge(
+      api,
+      userId,
+      score,
+      startDate,
+      endDate,
+      daysBetween
+    );
 
     return { data: { challenge } };
   } catch (e) {
@@ -30,14 +39,17 @@ async function createGraphcoolChallenge(
   api: GraphQLClient,
   userId: string,
   score: [number],
-  date: Date
+  startDate: Date,
+  endDate: Date,
+  daysBetween: number
 ): Promise<string> {
   const mutation = `
-      mutation createGraphcoolChallenge($userId: String!, $score: Float!, $date: DateTime!) {
+      mutation createGraphcoolChallenge($userId: String!, $score: Float!, $date: DateTime!, $daysBetween: Int!) {
         createChallenge(
           userId: $userId,
           score: $score,
-          date: $date
+          date: $date,
+          daysBetween: $daysBetween
         ) {
           id
         }
@@ -47,7 +59,9 @@ async function createGraphcoolChallenge(
   const variables = {
     userId,
     score,
-    date
+    startDate,
+    endDate,
+    daysBetween
   };
 
   return api

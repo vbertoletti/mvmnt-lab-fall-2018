@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import moment from "moment";
 import styles from "./styles";
 
@@ -10,6 +10,7 @@ class DailyReports extends Component {
       test: this.props.dailyReportsQuey
     };
   }
+
   render() {
     const { data } = this.props;
     return (

@@ -22,11 +22,13 @@ class LoginContainer extends Component {
       <Mutation mutation={LoginMutation}>
         {login => (
           <UserContext.Consumer>
-            {({ signin, token }) => {
+            {({ storeSessionToken, token }) => {
               if (token) {
                 this.props.navigation.navigate("App");
               } else {
-                return <LogIn login={login} signin={signin} />;
+                return (
+                  <LogIn login={login} storeSessionToken={storeSessionToken} />
+                );
               }
             }}
           </UserContext.Consumer>

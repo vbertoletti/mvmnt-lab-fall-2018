@@ -6,6 +6,8 @@ extend type Mutation {
   addChallenge(
     userId: String!
     score: [Float!]
-    date: DateTime!
+    startDate: DateTime!
+    endDate: DateTime!
+    daysBetween: Int!
   ): CreateChallengePayload
 }

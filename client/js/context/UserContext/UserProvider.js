@@ -6,7 +6,6 @@ class UserProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: "Test Token",
       token: "",
       id: ""
     };
@@ -34,6 +33,7 @@ class UserProvider extends Component {
     let userToken = await Realm.objects("User").map(user => user.token);
     let userId = await Realm.objects("User").map(user => user.id);
     this.setState({ token: userToken, id: userId });
+    console.log("Provider", id);
   }
 
   render() {
@@ -43,8 +43,7 @@ class UserProvider extends Component {
           ...this.state,
           storeSessionToken: this.storeSessionToken.bind(this),
           removeUserIdToken: this.removeUserIdToken.bind(this),
-          queryUser: this.queryUser.bind(this),
-          token: this.state.token
+          queryUser: this.queryUser.bind(this)
         }}
       >
         {this.props.children}
