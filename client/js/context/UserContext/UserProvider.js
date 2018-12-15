@@ -11,8 +11,8 @@ class UserProvider extends Component {
     };
   }
 
-  async componentDidMount() {
-    await this.queryUser();
+  componentDidMount() {
+    this.queryUser();
   }
 
   async storeSessionToken(token, id) {
@@ -33,7 +33,6 @@ class UserProvider extends Component {
     let userToken = await Realm.objects("User").map(user => user.token);
     let userId = await Realm.objects("User").map(user => user.id);
     this.setState({ token: userToken, id: userId });
-    console.log("Provider", id);
   }
 
   render() {
