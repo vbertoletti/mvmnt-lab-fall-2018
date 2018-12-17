@@ -1,6 +1,23 @@
 import React, { Component } from "react";
 import Poses from "./Poses";
 import propTypes from "prop-types";
+import gql from "graphql-tag";
+import { Query } from "react-apollo";
+import { Text } from "react-native";
+import { formatSessionData } from "../../lib/helper";
+
+const PosesQuery = gql`
+  query allPoses($filter: PoseFilter) {
+    allPoses(filter: $filter) {
+      description
+      duration
+      icon
+      id
+      title
+      video
+    }
+  }
+`;
 
 class PosesContainer extends Component {
   static navigationOptions = {
@@ -11,7 +28,22 @@ class PosesContainer extends Component {
     }
   };
   render() {
-    return <Poses navigation={this.props.navigation} />;
+    return (
+      <Query query={PosesQuery}>
+        {({ loading, error, data }) => {
+          if (loading) return <Text>Loading</Text>;
+          if (error) return `${error}`;
+          if (data) {
+            return (
+              <Poses
+                navigation={this.props.navigation}
+                poses={formatSessionData(data.allPoses)}
+              />
+            );
+          }
+        }}
+      </Query>
+    );
   }
 }
 
