@@ -23,10 +23,14 @@ class UserProvider extends Component {
   }
 
   async removeUserIdToken(id) {
-    await Realm.write(() => {
-      Realm.delete(Realm.objectForPrimaryKey("User", id));
-      this.setState({ id: "", token: "" });
-    });
+    try {
+      await Realm.write(() => {
+        Realm.delete(Realm.objectForPrimaryKey("User", id));
+        this.setState({ id: null, token: null });
+      });
+    } catch (e) {
+      return e;
+    }
   }
 
   async queryUser() {

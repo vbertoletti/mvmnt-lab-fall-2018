@@ -4,6 +4,7 @@ import Profile from "./Profile";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
+import PropTypes from "prop-types";
 
 const profileScreenQuery = gql`
   query($id: ID!) {
@@ -73,8 +74,6 @@ class ProfileContainer extends Component {
 
 export default ProfileContainer;
 
-ProfileContainer.defaultProps = {
-  removeUserIdToken: null,
-  id: null,
-  data: null
+ProfileContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
 };
