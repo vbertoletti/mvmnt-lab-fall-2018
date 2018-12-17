@@ -44,11 +44,7 @@ const ProfileStack = createStackNavigator(
   {
     Profile: ProfileScreen,
     DailyReports: DailyReportsScreen,
-<<<<<<< HEAD
-    CompletedChallenges: CompletedChallenegesScreen,
-=======
     CompletedChallenges: CompletedChallengesScreen,
->>>>>>> Started creating all challe ges screen
     Reminders: RemindersScreen,
     About: AboutScreen,
     EditProfile: EditProfileScreen
