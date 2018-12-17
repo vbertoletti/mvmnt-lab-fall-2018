@@ -13,7 +13,7 @@ const LoginMutation = gql`
   }
 `;
 
-class LoginContainer extends Component {
+class SignInContainer extends Component {
   static navigationOptions = {
     header: null
   };
@@ -38,4 +38,10 @@ class LoginContainer extends Component {
   }
 }
 
-export default LoginContainer;
+export default SignInContainer;
+
+SignInContainer.defaultProps = {
+  login: null,
+  storeSessionToken: null,
+  token: null
+};

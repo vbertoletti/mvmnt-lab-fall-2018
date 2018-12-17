@@ -72,3 +72,9 @@ class ProfileContainer extends Component {
 }
 
 export default ProfileContainer;
+
+ProfileContainer.defaultProps = {
+  removeUserIdToken: null,
+  id: null,
+  data: null
+};

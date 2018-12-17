@@ -71,3 +71,10 @@ const Profile = ({ navigation, data, logout, id }) => {
   );
 };
 export default Profile;
+
+Profile.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired
+};

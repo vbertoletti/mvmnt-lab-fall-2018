@@ -21,12 +21,12 @@ const LogIn = ({ login, storeSessionToken }) => {
         source={require("../../assets/images/background.png")}
         style={styles.background}
       >
-        <View>
+        <Fragment>
           <Image
             source={require("../../assets/images/logo.png")}
             style={styles.companyLogo}
           />
-        </View>
+        </Fragment>
         <View style={styles.loginForm}>
           <Form
             onSubmit={async values => {
@@ -111,4 +111,9 @@ const LogIn = ({ login, storeSessionToken }) => {
   );
 };
 
-export default LogIn;
+export default SignIn;
+
+SignIn.propTypes = {
+  login: PropTypes.func.isRequired,
+  storeSessionToken: PropTypes.func.isRequired
+};
