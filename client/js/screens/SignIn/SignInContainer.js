@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LogIn from "./LogIn";
+import SignIn from "./SignIn";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
@@ -28,7 +28,7 @@ class SignInContainer extends Component {
                 this.props.navigation.navigate("App");
               } else {
                 return (
-                  <LogIn login={login} storeSessionToken={storeSessionToken} />
+                  <SignIn login={login} storeSessionToken={storeSessionToken} />
                 );
               }
             }}

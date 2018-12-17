@@ -7,13 +7,15 @@ import {
   TouchableOpacity,
   TextInput,
   Text,
-  StatusBar
+  StatusBar,
+  Alert
 } from "react-native";
 import styles from "./styles";
+import PropTypes from "prop-types";
 
 const required = value => (value ? undefined : "* Required Field");
 
-const LogIn = ({ login, storeSessionToken }) => {
+const SignIn = ({ login, storeSessionToken }) => {
   return (
     <Fragment>
       <StatusBar barStyle="light-content" />

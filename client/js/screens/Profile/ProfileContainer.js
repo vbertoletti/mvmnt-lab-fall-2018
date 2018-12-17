@@ -17,17 +17,6 @@ const profileScreenQuery = gql`
   }
 `;
 
-const challengesQuery = gql`
-  query AllChallenges {
-    allChallenges {
-      id
-      startDate
-      endDate
-      score
-    }
-  }
-`;
-
 class ProfileContainer extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: "PROFILE",
@@ -70,7 +59,6 @@ class ProfileContainer extends Component {
                         data={data}
                         logout={removeUserIdToken}
                         id={id}
-                        allChallenges={allChallenges}
                       />
                     );
                   }
@@ -84,13 +72,7 @@ class ProfileContainer extends Component {
   }
 }
 
-export default compose(
-  graphql(challengesQuery, {
-    name: "allChallenges"
-  })
-)(ProfileContainer);
-
-// export default ProfileContainer;
+export default ProfileContainer;
 
 ProfileContainer.propTypes = {
   navigation: PropTypes.object.isRequired

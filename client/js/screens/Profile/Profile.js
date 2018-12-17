@@ -2,9 +2,9 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import React from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import PropTypes from "prop-types";
 
-const Profile = ({ navigation, data, logout, id, allChallenges }) => {
-  console.log(allChallenges)
+const Profile = ({ navigation, data, logout, id }) => {
   return (
     <View style={styles.profileWrapper}>
       <View style={styles.profileHeader}>
