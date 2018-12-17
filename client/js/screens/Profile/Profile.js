@@ -3,7 +3,8 @@ import styles from "./styles";
 import React from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-const Profile = ({ navigation, data, logout, id }) => {
+const Profile = ({ navigation, data, logout, id, allChallenges }) => {
+  console.log(allChallenges)
   return (
     <View style={styles.profileWrapper}>
       <View style={styles.profileHeader}>
