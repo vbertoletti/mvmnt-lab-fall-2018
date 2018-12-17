@@ -26,7 +26,6 @@ class PosesDetailsContainer extends Component {
     }
   };
   render() {
-    // const { id } = this.props.navigation.state.params;
     return (
       <Query
         query={PoseDetailsQuery}
