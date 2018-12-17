@@ -6,14 +6,13 @@ class UserProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: "Test Token",
-      token: "",
-      id: ""
+      token: null,
+      id: null
     };
   }
 
-  async componentDidMount() {
-    await this.queryUser();
+  componentDidMount() {
+    this.queryUser();
   }
 
   async storeSessionToken(token, id) {
@@ -43,8 +42,7 @@ class UserProvider extends Component {
           ...this.state,
           storeSessionToken: this.storeSessionToken.bind(this),
           removeUserIdToken: this.removeUserIdToken.bind(this),
-          queryUser: this.queryUser.bind(this),
-          token: this.state.token
+          queryUser: this.queryUser.bind(this)
         }}
       >
         {this.props.children}

@@ -34,5 +34,7 @@ type Challenge @model {
   id: ID! @isUnique
   userId: String!
   score: [Float!]
-  date: DateTime!
+  startDate: DateTime!
+  endDate: DateTime!
+  daysBetween: Int!
 }
