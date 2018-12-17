@@ -9,7 +9,7 @@ import ProfileScreen from "../screens/Profile";
 import PosesDetailsScreen from "../screens/PosesDetails";
 import WorkoutSessionScreen from "../screens/WorkOutSession";
 import DailyReportsScreen from "../screens/DailyReports";
-import CompletedChallenegesScreen from "../screens/CompletedChallenges";
+import CompletedChallengesScreen from "../screens/CompletedChallenges";
 import RemindersScreen from "../screens/Reminders";
 import AboutScreen from "../screens/About";
 import EditProfileScreen from "../screens/EditProfile";
@@ -44,7 +44,11 @@ const ProfileStack = createStackNavigator(
   {
     Profile: ProfileScreen,
     DailyReports: DailyReportsScreen,
+<<<<<<< HEAD
     CompletedChallenges: CompletedChallenegesScreen,
+=======
+    CompletedChallenges: CompletedChallengesScreen,
+>>>>>>> Started creating all challe ges screen
     Reminders: RemindersScreen,
     About: AboutScreen,
     EditProfile: EditProfileScreen
