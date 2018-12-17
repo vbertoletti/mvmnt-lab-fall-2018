@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Text, View } from "react-native";
+import React from "react";
+import { View, FlatList } from "react-native";
 import styles from "./styles";
 import { ImageBackground } from "react-native";
-import ChallengesCard from "../../components/ChallengesCard/ChallengesCard";
+import ChallengesCard from "../../components/ChallengesCard";
 
 const CompletedChallenges = ({ data }) => {
   return (
@@ -11,10 +11,13 @@ const CompletedChallenges = ({ data }) => {
       style={styles.backgroundImage}
     >
       <View style={styles.container}>
-        {data.allChallenges.map(x => {
-          return <Text>{x.daysBetween}</Text>;
-        })}
-        <ChallengesCard data={data} />
+        <FlatList
+          data={data.allChallenges}
+          horizontal={true}
+          renderItem={({ item: rowData }) => {
+            return <ChallengesCard data={rowData} />;
+          }}
+        />
       </View>
     </ImageBackground>
   );

@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
+  cardContainer: {
+    alignItems: "center"
+  },
   text: {
     color: "white",
     fontSize: 25,
@@ -29,6 +32,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#BFBFBF",
     width: 300,
     height: 400
+  },
+  background: {
+    backgroundColor: "black"
   }
 });
 

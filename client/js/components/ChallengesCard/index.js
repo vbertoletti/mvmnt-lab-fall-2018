@@ -1,2 +1,2 @@
-import ChallengesCardContainer from "./ChallengesCardContainer";
-export default ChallengesCardContainer;
+import ChallengesCard from "./ChallengesCard";
+export default ChallengesCard;
