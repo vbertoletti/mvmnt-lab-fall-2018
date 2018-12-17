@@ -1,8 +1,9 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import React from "react";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-const Profile = ({ navigation }) => {
+const Profile = ({ navigation, data, logout, id }) => {
   return (
     <View style={styles.profileWrapper}>
       <View style={styles.profileHeader}>
@@ -11,7 +12,9 @@ const Profile = ({ navigation }) => {
             source={require("../../assets/images/placeholder.jpg")}
             style={styles.profileImage}
           />
-          <Text style={styles.headerItemsText}>Person Name</Text>
+          <Text style={styles.headerItemsText}>{` ${data.User.firstname} ${
+            data.User.lastname
+          }`}</Text>
         </View>
         <View style={styles.headerItems}>
           <View style={styles.progression}>
@@ -26,7 +29,8 @@ const Profile = ({ navigation }) => {
           navigation.navigate("DailyReports");
         }}
       >
-        <Text style={styles.profileOptionsText}>Daily Reports</Text>
+        <Text style={styles.profileOptionsText}>Daily Reports </Text>
+        <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.profileOptions}
@@ -35,6 +39,7 @@ const Profile = ({ navigation }) => {
         }}
       >
         <Text style={styles.profileOptionsText}>Completed Challenges</Text>
+        <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.reminders}
@@ -43,6 +48,7 @@ const Profile = ({ navigation }) => {
         }}
       >
         <Text style={styles.profileOptionsText}>Reminders</Text>
+        <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.about}
@@ -51,11 +57,12 @@ const Profile = ({ navigation }) => {
         }}
       >
         <Text style={styles.profileOptionsText}>About</Text>
+        <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.profileButton}
         onPress={() => {
-          navigation.navigate("Login");
+          logout(id);
         }}
       >
         <Text style={styles.buttonText}>LOGOUT</Text>

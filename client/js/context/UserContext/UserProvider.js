@@ -32,7 +32,7 @@ class UserProvider extends Component {
   async queryUser() {
     let userToken = await Realm.objects("User").map(user => user.token);
     let userId = await Realm.objects("User").map(user => user.id);
-    this.setState({ token: userToken, id: userId });
+    this.setState({ token: userToken, id: userId[0] });
   }
 
   render() {
