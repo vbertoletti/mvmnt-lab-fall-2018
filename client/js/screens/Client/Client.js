@@ -4,11 +4,9 @@ import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 
 const Client = ({ client }) => {
-  console.log(client);
   return (
     <SectionList
       renderItem={({ item }) => {
-        console.log(item);
         return (
           <ScrollView>
             <View style={styles.itemContainer} key={item.id}>

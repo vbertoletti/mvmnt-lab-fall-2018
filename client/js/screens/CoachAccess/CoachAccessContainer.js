@@ -25,8 +25,7 @@ class CoachAccessContainer extends Component {
           <UserContext.Consumer>
             {({ signin, token }) => {
               if (token) {
-                console.log("you have token");
-                // this.props.navigation.navigate("Client");
+                this.props.navigation.navigate("Client");
               } else {
                 return <CoachAccess login={login} signin={signin} />;
               }
