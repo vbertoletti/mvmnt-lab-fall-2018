@@ -4,7 +4,11 @@ import {
   createStackNavigator
 } from "react-navigation";
 import { AppStack } from "./NavigationLayout";
+<<<<<<< HEAD
 import SignInScreen from "../screens/SignIn";
+=======
+import SignInScreen from "../screens/LogIn";
+>>>>>>> fix merge conflict
 import SignUpScreen from "../screens/SignUp";
 import { sharedNavigationOptions } from "./config";
 
