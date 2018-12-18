@@ -6,7 +6,6 @@ import {
 import { AppStack } from "./NavigationLayout";
 
 import SignInScreen from "../screens/SignIn";
-
 import SignUpScreen from "../screens/SignUp";
 
 import { sharedNavigationOptions } from "./config";
