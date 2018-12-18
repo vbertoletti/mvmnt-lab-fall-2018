@@ -70,7 +70,7 @@ class MainPageSessionCard extends Component {
           )}
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("WorkoutSession")}
+            onPress={() => navigation.navigate("WorkOut")}
             style={styles.button}
           >
             <Text style={styles.buttonText}>START</Text>

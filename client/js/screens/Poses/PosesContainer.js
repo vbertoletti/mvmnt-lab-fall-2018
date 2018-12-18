@@ -3,7 +3,7 @@ import Poses from "./Poses";
 import propTypes from "prop-types";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import { Text } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import { formatSessionData } from "../../lib/helper";
 
 const PosesQuery = gql`
@@ -31,7 +31,12 @@ class PosesContainer extends Component {
     return (
       <Query query={PosesQuery}>
         {({ loading, error, data }) => {
-          if (loading) return <Text>Loading</Text>;
+          if (loading)
+            return (
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <ActivityIndicator size="large" color="#1CC6B1" />
+              </View>
+            );
           if (error) return `${error}`;
           if (data) {
             return (

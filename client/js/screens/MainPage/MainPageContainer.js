@@ -1,44 +1,25 @@
 import React, { Component } from "react";
 import MainPage from "./MainPage";
 import propTypes from "prop-types";
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import { Text } from "react-native";
-
-const AllDataQuery = gql`
-  {
-    allChallenges {
-      daysBetween
-      endDate
-      id
-      score
-      startDate
-      userId
-    }
-    allPoses {
-      description
-      duration
-      icon
-      id
-      title
-      video
-    }
-  }
-`;
+import { ActivityIndicator, View } from "react-native";
+import { AllDataQuery } from "../../apollo";
 
 class MainPageContainer extends Component {
   static navigationOptions = {
     title: "GROUND CONTROL",
-    headerTitleStyle: {
-      color: "white",
-      fontSize: 24
-    }
+    header: null
   };
   render() {
     return (
       <Query query={AllDataQuery}>
         {({ loading, error, data }) => {
-          if (loading) return <Text>Loading</Text>;
+          if (loading)
+            return (
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <ActivityIndicator size="large" color="#1CC6B1" />
+              </View>
+            );
           if (error) return `${error}`;
           if (data) {
             return (

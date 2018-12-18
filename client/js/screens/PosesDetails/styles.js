@@ -28,6 +28,14 @@ const styles = StyleSheet.create({
   },
   description: {
     padding: 20
+  },
+  videoCover: {
+    height: 80,
+    width: 80,
+    position: "absolute",
+    top: 100,
+    right: 150,
+    backgroundColor: "transparent"
   }
 });
 

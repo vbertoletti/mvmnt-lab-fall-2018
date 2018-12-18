@@ -1,14 +1,7 @@
 import React, { Fragment } from "react";
-import {
-  Text,
-  View,
-  ImageBackground,
-  FlatList,
-  ScrollView
-} from "react-native";
+import { Text, View, ImageBackground, FlatList } from "react-native";
 import styles from "./styles";
 import MainPageSessionCard from "../../components/MainPageSessionCard";
-import moment from "moment";
 
 const MainPage = ({ session, navigation, challenges }) => {
   _keyExtractor = item => item.id;
@@ -23,7 +16,7 @@ const MainPage = ({ session, navigation, challenges }) => {
             <Text style={styles.text}>GROUND CONTROL</Text>
             <View style={styles.progression}>
               <Text style={styles.progressionDate}>
-                {challenges[0].score.length}/31
+                {challenges[0].score.length}/{challenges[0].daysBetween}
               </Text>
             </View>
             <Text style={styles.progressionText}>Progress</Text>

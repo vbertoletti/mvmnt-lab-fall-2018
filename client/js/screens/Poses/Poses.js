@@ -5,7 +5,9 @@ import styles from "./styles";
 
 const thumbnail = {
   Bear: require("../../assets/images/icons/Bear.png"),
-  Superbug: require("../../assets/images/icons/Superbug.png")
+  Superbug: require("../../assets/images/icons/Superbug.png"),
+  Gargoyle: require("../../assets/images/icons/Gargoyle.png"),
+  Flamingo: require("../../assets/images/icons/Flamingo.png")
 };
 
 const Poses = ({ navigation, poses }) => {
@@ -17,7 +19,10 @@ const Poses = ({ navigation, poses }) => {
             <TouchableOpacity
               style={styles.container}
               onPress={() => {
-                navigation.navigate("PosesDetails", { id: item.id });
+                navigation.navigate("PosesDetails", {
+                  id: item.id,
+                  title: item.title
+                });
               }}
             >
               <Image style={styles.icon} source={thumbnail[item.icon]} />

@@ -10,6 +10,7 @@ import SignUpScreen from "../screens/SignUp";
 import ForgotPasswordScreen from "../screens/ForgotPassword";
 import CoachSignInScreen from "../screens/CoachAccess";
 import { sharedNavigationOptions } from "./config";
+import WorkOutScreen from "../screens/WorkOutSession";
 
 const AuthStack = createStackNavigator(
   {
@@ -25,11 +26,23 @@ const AuthStack = createStackNavigator(
   }
 );
 
+const WorkOutStack = createStackNavigator(
+  {
+    WorkOut: WorkOutScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
+
 const AppNavigator = createSwitchNavigator(
   {
     Auth: AuthStack,
     App: AppStack,
-    Coach: CoachStack
+    Coach: CoachStack,
+    WorkOut: WorkOutStack
   },
   {
     initialRouteName: "Auth"

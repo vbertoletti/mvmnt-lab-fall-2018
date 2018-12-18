@@ -97,3 +97,24 @@ export const QueryUser = gql`
     }
   }
 `;
+
+export const AllDataQuery = gql`
+  {
+    allChallenges {
+      daysBetween
+      endDate
+      id
+      score
+      startDate
+      userId
+    }
+    allPoses {
+      description
+      duration
+      icon
+      id
+      title
+      video
+    }
+  }
+`;
