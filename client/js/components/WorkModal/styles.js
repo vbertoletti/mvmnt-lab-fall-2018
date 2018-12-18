@@ -6,13 +6,6 @@ var height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: globalStyles.container,
-  centerContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    width: "100%"
-  },
   modalContentContainer: {
     display: "flex",
     justifyContent: "space-around",
@@ -68,21 +61,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     color: "black"
-  },
-  face: {
-    margin: 15
-  },
-  textInputContainer: {
-    width: "85%",
-    justifyContent: "space-between",
-    height: 140
-  },
-  textInput: {
-    paddingTop: 10,
-    height: 60,
-    width: "100%",
-    borderWidth: 1,
-    borderColor: "lightgray"
   }
 });
 

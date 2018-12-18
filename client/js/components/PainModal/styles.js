@@ -6,13 +6,6 @@ var height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: globalStyles.container,
-  centerContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    width: "100%"
-  },
   modalContentContainer: {
     display: "flex",
     justifyContent: "space-around",
@@ -58,16 +51,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 20,
     color: "#9E4AE0"
-  },
-  secondaryHeading: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "black"
-  },
-  tertiaryHeading: {
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "black"
   },
   face: {
     margin: 15
