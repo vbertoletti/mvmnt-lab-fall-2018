@@ -31,7 +31,7 @@ class SignUpContainer extends Component {
       <Mutation mutation={SignupMutation}>
         {signupUser => (
           <Fragment>
-            <SignUp signup={signupUser} />
+            <SignUp signup={signupUser} navigation={this.props.navigation} />
           </Fragment>
         )}
       </Mutation>
