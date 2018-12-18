@@ -62,3 +62,38 @@ export const AllChallengesQuery = gql`
     }
   }
 `;
+
+export const UpdateUserMutation = gql`
+  mutation UpdateUser(
+    $id: ID!
+    $firstname: String
+    $lastname: String
+    $email: String
+    $password: String
+  ) {
+    updateUser(
+      id: $id
+      firstname: $firstname
+      lastname: $lastname
+      email: $email
+      password: $password
+    ) {
+      firstname
+      lastname
+      email
+      password
+    }
+  }
+`;
+
+export const QueryUser = gql`
+  query queryUser($id: ID!) {
+    User(id: $id) {
+      id
+      firstname
+      lastname
+      image
+      email
+    }
+  }
+`;
