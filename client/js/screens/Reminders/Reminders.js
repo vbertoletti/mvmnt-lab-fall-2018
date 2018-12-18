@@ -5,6 +5,7 @@ import {
   FlatList,
   ScrollView
 } from "react-native";
+import ReminderSwitch from '../../components/ReminderSwitch'
 import styles from "./styles";
 
 const Reminders = () => {
