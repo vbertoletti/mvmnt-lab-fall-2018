@@ -60,10 +60,6 @@ const ProfileStack = createStackNavigator(
 
 export const AppStack = createBottomTabNavigator(
   { Poses: PosesStack, Main: MainStack, Profile: ProfileStack },
-<<<<<<< HEAD
-=======
-
->>>>>>> add CoachAccess
   {
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {

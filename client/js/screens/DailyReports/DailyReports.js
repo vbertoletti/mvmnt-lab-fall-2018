@@ -19,11 +19,7 @@ class DailyReports extends Component {
     const { data } = this.props;
     return (
       <View style={styles.centerContainer}>
-<<<<<<< HEAD
         {data.allDailyReports.map(dailyReport => {
-=======
-        {data.allDailyReports.map(x => {
->>>>>>> remove console.log
           return (
             <View>
               <Text>{dailyReport.date}</Text>
