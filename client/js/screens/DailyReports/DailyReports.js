@@ -1,40 +1,44 @@
-import React, { Component } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import moment from "moment";
+import React from "react";
+import {
+  View,
+  FlatList,
+  ImageBackground,
+  Text
+} from "react-native";
 import styles from "./styles";
+import DailyReportsCard from "../../components/DailyReportsCard";
 
-class DailyReports extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: null
-    };
-  }
+const days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
 
-  componentDidMount() {
-    this.setState({ test: this.props.dailyReportsQuey });
-  }
+const DailyReports = ({ data }) => {
+  return (
+    <View>
+      <ImageBackground
+        source={require("../../assets/images/BigHeader.png")}
+        style={styles.backgroundImage}
+      />
 
-  render() {
-    const { data } = this.props;
-    return (
-      <View style={styles.centerContainer}>
-        {data.allDailyReports.map(dailyReport => {
+      <FlatList
+        data={days}
+        horizontal={true}
+        renderItem={({ item: days }) => {
           return (
-            <View>
-              <Text>{dailyReport.date}</Text>
-              <Text>{moment(dailyReport.date).format("MMM Do YYYY")}</Text>
-              <Text>{dailyReport.notes}</Text>
-              <Text>{dailyReport.pain}</Text>
-              <Text>{dailyReport.painDescription}</Text>
-              <Text>{dailyReport.work}</Text>
-              <Text>{dailyReport.score}</Text>
+            <View style={styles.banner}>
+              <Text style={styles.days}>{days}</Text>
             </View>
-          );
-        })}
-      </View>
-    );
-  }
-}
+          )
+        }}
+      />
+
+      <FlatList
+        data={data.allDailyReports}
+        horizontal={true}
+        renderItem={({ item: rowData}) => {
+          return <DailyReportsCard data={rowData} />;
+        }}
+      />
+    </View>
+  );
+};
 
 export default DailyReports;

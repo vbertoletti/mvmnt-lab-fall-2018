@@ -26,7 +26,6 @@ class CompletedChallengesContainer extends Component {
     },
     headerStyle: {
       backgroundColor: "transparent",
-      position: "absolute",
       borderBottomColor: "transparent"
     }
   };
