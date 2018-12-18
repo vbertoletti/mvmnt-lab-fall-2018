@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, SectionList, View, Image } from "react-native";
 import propTypes from "prop-types";
-import DailyReportModal from "../../components/DailyReportModal";
+import styles from "./styles";
 
 const thumbnail = {
   Bear: require("../../assets/images/icons/Bear.png"),
