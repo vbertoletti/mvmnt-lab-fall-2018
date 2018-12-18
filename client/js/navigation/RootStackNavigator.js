@@ -5,7 +5,7 @@ import {
 } from "react-navigation";
 import { AppStack } from "./NavigationLayout";
 import SignInScreen from "../screens/SignIn";
-import SignUpScreen from "../screens/SignUp";
+import SignInScreen from "../screens/LogIn";
 import { sharedNavigationOptions } from "./config";
 
 const AuthStack = createStackNavigator(

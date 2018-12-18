@@ -15,6 +15,8 @@ import AboutScreen from "../screens/About";
 import EditProfileScreen from "../screens/EditProfile";
 import { sharedNavigationOptions } from "./config";
 import { Image } from "react-native";
+import CoachScreen from "../screens/CoachAccess";
+import ClientScreen from "../screens/Client";
 
 const MainStack = createStackNavigator(
   {
@@ -58,6 +60,10 @@ const ProfileStack = createStackNavigator(
 
 export const AppStack = createBottomTabNavigator(
   { Poses: PosesStack, Main: MainStack, Profile: ProfileStack },
+<<<<<<< HEAD
+=======
+
+>>>>>>> add CoachAccess
   {
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {

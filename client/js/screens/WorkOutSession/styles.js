@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   logo: {
     marginTop: 50,
     alignSelf: "center"
-  }, 
+  },
   textInput: {
     color: "white"
   }
