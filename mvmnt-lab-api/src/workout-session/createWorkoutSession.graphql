@@ -1,0 +1,12 @@
+type CreateWorkoutSessionPayload {
+  id: ID!
+}
+
+extend type Mutation {
+  addPose(
+    icon: String!
+    title: String!
+    duration: String!
+    video: String!
+  ): CreatePosePayload
+}
