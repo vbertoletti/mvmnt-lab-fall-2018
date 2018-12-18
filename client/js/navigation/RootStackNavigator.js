@@ -6,7 +6,9 @@ import {
 import { AppStack } from "./NavigationLayout";
 
 import SignInScreen from "../screens/SignIn";
-import SignInScreen from "../screens/LogIn";
+
+import SignUpScreen from "../screens/SignUp";
+
 import { sharedNavigationOptions } from "./config";
 
 const AuthStack = createStackNavigator(
