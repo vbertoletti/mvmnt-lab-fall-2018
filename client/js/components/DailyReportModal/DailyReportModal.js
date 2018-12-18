@@ -3,6 +3,8 @@ import { Text, View, TouchableOpacity } from "react-native";
 import moment from "moment";
 import styles from "./styles";
 import PropTypes from "prop-types";
+import WorkModal from "../WorkModal";
+import PainModal from "../PainModal";
 
 class DailyReportModal extends Component {
   constructor(props) {
@@ -10,11 +12,25 @@ class DailyReportModal extends Component {
     this.state = {
       allChallenges: [],
       date: new Date().toISOString(),
-      pain: 0,
-      score: 2,
-      work: 2,
-      scores: []
+      pain: 5,
+      score: 0,
+      work: 5,
+      painDescription: "",
+      notes: "",
+      workModal: false,
+      painModal: false
     };
+    this.scores = [];
+    this.days = 0;
+    this.allChallengeResponse = {};
+  }
+
+  change(work) {
+    this.setState(() => {
+      return {
+        work: parseFloat(work)
+      };
+    });
   }
 
   getAverageOfUserScores(arr) {
@@ -34,60 +50,73 @@ class DailyReportModal extends Component {
     return days;
   }
 
+  setCurrentChallengeDays(challenges) {
+    challenges.map(challenge => {
+      if (
+        challenge.startDate <= new Date().toISOString() &&
+        challenge.endDate >= new Date().toISOString()
+      ) {
+        this.days = challenge.score.length + 1;
+      }
+    });
+  }
+
+  toggleWorkModal() {
+    this.setState({
+      workModal: !this.state.workModal
+    });
+  }
+
+  togglePainModal() {
+    this.setState({
+      painModal: !this.state.painModal
+    });
+  }
+
+  setWork(work) {
+    this.setState({
+      work: work
+    });
+  }
+
+  setPain(pain) {
+    this.setState({
+      pain: pain
+    });
+  }
+
   render() {
     return (
       <View style={styles.centerContainer}>
-        <Text>User ID: {this.props.userId}</Text>
+        <WorkModal
+          workModal={this.state.workModal}
+          toggleWorkModal={this.toggleWorkModal.bind(this)}
+          togglePainModal={this.togglePainModal.bind(this)}
+          setWork={this.setWork.bind(this)}
+          days={this.days}
+        />
+
+        <PainModal
+          painModal={this.state.painModal}
+          togglePainModal={this.togglePainModal.bind(this)}
+          setPain={this.setPain.bind(this)}
+          allChallengeResponse={this.allChallengeResponse}
+          createReport={this.props.createReport}
+          updateChallenge={this.props.updateChallenge}
+          work={this.state.work}
+          userId={this.props.userId}
+        />
+
         <TouchableOpacity
           onPress={() => {
-            this.props.createReport({
-              variables: {
-                date: new Date().toISOString(),
-                pain: this.state.pain,
-                score: this.state.score,
-                work: this.state.work,
-                userId: this.props.userId,
-                painDescription: "Test Test Test",
-                notes: "Im dying"
-              }
-            });
-            const allChallengeResponse = this.props.allChallenges;
-            this.setState({
-              allChallenges: allChallengeResponse.allChallenges
-            });
-            this.state.allChallenges.map(challenge => {
-              if (
-                challenge.startDate <= new Date().toISOString() &&
-                challenge.endDate >= new Date().toISOString()
-              ) {
-                this.setState({ scores: challenge.score });
-                this.setState({ scores: this.state.scores.push(this.work) });
-                this.props.updateChallenge({
-                  variables: { id: challenge.id, score: this.state.scores }
-                });
-              }
-            });
-            if (
-              this.state.allChallenges.length === 0 ||
-              this.state.allChallenges[this.allChallenges.length - 1].endDate <
-                new Date().toISOString()
-            ) {
-              this.props.createChallenge({
-                variables: {
-                  endDate: moment(new Date()).add(1, "M"),
-                  startDate: new Date().toISOString(),
-                  score: [this.state.score],
-                  userId: this.props.userId,
-                  daysBetween: this.getDaysBetween(
-                    new Date().toISOString(),
-                    moment(new Date().toISOString()).add(1, "M")
-                  )
-                }
-              });
-            }
+            this.allChallengeResponse = this.props.allChallenges;
+            this.setCurrentChallengeDays(
+              this.allChallengeResponse.allChallenges
+            );
+            this.setState({ workModal: true });
           }}
         >
-          <Text>Create new DailyReport</Text>
+          <Text>Click Me</Text>
         </TouchableOpacity>
       </View>
     );
