@@ -10,8 +10,9 @@ import {
   TextInput
 } from "react-native";
 import styles from "./styles";
+import PropTypes from "prop-types";
 
-const ForgotPassword = ({navigation}) => {
+const ForgotPassword = ({ navigation }) => {
   return (
     <React.Fragment>
       <ImageBackground
@@ -60,7 +61,11 @@ const ForgotPassword = ({navigation}) => {
             )}
           </Form>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("SignIn");
+          }}
+        >
           <Text style={styles.return}>RETURN TO LOG IN</Text>
         </TouchableOpacity>
       </ImageBackground>
@@ -69,3 +74,7 @@ const ForgotPassword = ({navigation}) => {
 };
 
 export default ForgotPassword;
+
+ForgotPassword.propTypes = {
+  navigation: PropTypes.object.isRequired
+};

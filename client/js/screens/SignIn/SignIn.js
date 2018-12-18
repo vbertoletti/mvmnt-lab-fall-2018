@@ -12,10 +12,12 @@ import {
 } from "react-native";
 import styles from "./styles";
 import PropTypes from "prop-types";
+import LinearGradient from "react-native-linear-gradient";
 
 const required = value => (value ? undefined : "* Required Field");
 
-const SignIn = ({ login, storeSessionToken }) => {
+const SignIn = ({ login, storeSessionToken, navigation }) => {
+  console.log(navigation);
   return (
     <Fragment>
       <StatusBar barStyle="light-content" />
@@ -90,18 +92,37 @@ const SignIn = ({ login, storeSessionToken }) => {
                   }}
                   style={styles.button}
                 >
-                  <Text style={styles.loginButtons}>LOG IN</Text>
+                  <LinearGradient
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    colors={["#1DC6C2", "#17C687"]}
+                    style={styles.button}
+                  >
+                    <Text style={styles.loginButtons}>LOG IN</Text>
+                  </LinearGradient>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("ForgotPassword");
+                  }}
+                >
                   <Text style={styles.loginButtons}>Forgot password?</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button}>
-                  <Text style={styles.loginButtons}>REGISTER</Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("SignUp");
+                  }}
+                >
+                  <Image source={require("../../assets/images/Register.png")} />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("CoachAccess");
+                  }}
+                >
                   <Text style={styles.loginButtons}>COACH ACCESS</Text>
                 </TouchableOpacity>
               </View>

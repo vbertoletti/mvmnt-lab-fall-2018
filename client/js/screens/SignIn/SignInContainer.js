@@ -28,7 +28,11 @@ class SignInContainer extends Component {
                 this.props.navigation.navigate("App");
               } else {
                 return (
-                  <SignIn login={login} storeSessionToken={storeSessionToken} />
+                  <SignIn
+                    login={login}
+                    storeSessionToken={storeSessionToken}
+                    navigation={this.props.navigation}
+                  />
                 );
               }
             }}
