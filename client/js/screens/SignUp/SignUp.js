@@ -4,17 +4,20 @@ import {
   ImageBackground,
   TextInput,
   TouchableOpacity,
-  Alert,
-  View
+  Alert
 } from "react-native";
 import styles from "./styles";
 import { Form, Field } from "react-final-form";
 
-const inputResult = async (values, signup) => {
+const inputResult = async (values, signup, navigation) => {
   await signup({ variables: values }).then(() => {
-    Alert.alert("Register Complete!", "Thank You For Registering!", [
-      { text: "Got it!" }
-    ]);
+    {
+      {
+        Alert.alert("Register Complete!", "Thank You For Registering!", [
+          { text: "Got it!", onPress: () => navigation.navigate("SignIn") }
+        ]);
+      }
+    }
   });
 };
 
@@ -44,7 +47,7 @@ const validate = values => {
   return errors;
 };
 
-const SignUp = ({ signup }) => {
+const SignUp = ({ signup, navigation }) => {
   return (
     <Fragment>
       <ImageBackground
@@ -54,7 +57,7 @@ const SignUp = ({ signup }) => {
         <Text style={styles.register}>REGISTER</Text>
         <Form
           validate={validate}
-          onSubmit={values => inputResult(values, signup)}
+          onSubmit={values => inputResult(values, signup, navigation)}
           render={({ handleSubmit, pristine, invalid }) => (
             <Fragment>
               <Field name="firstname" validate={required}>
@@ -91,6 +94,7 @@ const SignUp = ({ signup }) => {
                       style={styles.input}
                       placeholder="Email"
                       placeholderTextColor="white"
+                      autoCapitalize="none"
                     />
                     {meta.error && meta.touched && <Text>{meta.error}</Text>}
                   </Fragment>

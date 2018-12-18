@@ -6,13 +6,14 @@ import {
 import { AppStack } from "./NavigationLayout";
 import SignInScreen from "../screens/SignIn";
 import SignUpScreen from "../screens/SignUp";
-
+import ForgotPasswordScreen from "../screens/ForgotPassword";
 import { sharedNavigationOptions } from "./config";
 
 const AuthStack = createStackNavigator(
   {
     SignIn: SignInScreen,
-    SignUp: SignUpScreen
+    SignUp: SignUpScreen,
+    ForgotPassword: ForgotPasswordScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
