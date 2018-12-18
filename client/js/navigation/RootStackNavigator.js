@@ -4,6 +4,7 @@ import {
   createStackNavigator
 } from "react-navigation";
 import { AppStack } from "./NavigationLayout";
+
 import SignInScreen from "../screens/SignIn";
 import SignInScreen from "../screens/LogIn";
 import { sharedNavigationOptions } from "./config";
