@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     width: 250,
-    backgroundColor: 'white'
+    backgroundColor: "white"
   },
 
   buttonText: {

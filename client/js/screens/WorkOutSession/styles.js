@@ -1,5 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { globalStyles } from "../../config/styles";
+const width = Dimensions.get("window").width;
 
 const styles = StyleSheet.create({
   container: globalStyles.container,
@@ -26,17 +27,20 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   button: {
-    width: 300,
-    borderRadius: 30,
+    width: width,
+    height: 50,
     alignSelf: "center",
-    backgroundColor: "#1BC695"
+    backgroundColor: "#9F49E0"
   },
-  logo: {
-    marginTop: 50,
-    alignSelf: "center"
-  },
-  textInput: {
-    color: "white"
+  buttonText: {
+    justifyContent: "center",
+    width: 150,
+    fontSize: 20,
+    fontWeight: "bold",
+    alignSelf: "center",
+    color: "white",
+    alignSelf: "center",
+    marginTop: 10
   }
 });
 

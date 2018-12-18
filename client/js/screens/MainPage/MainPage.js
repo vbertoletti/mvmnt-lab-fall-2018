@@ -1,20 +1,52 @@
 import React, { Fragment } from "react";
-import { Text, View } from "react-native";
+import {
+  Text,
+  View,
+  ImageBackground,
+  FlatList,
+  ScrollView
+} from "react-native";
 import styles from "./styles";
-import { ImageBackground } from "react-native";
 import MainPageSessionCard from "../../components/MainPageSessionCard";
+import moment from "moment";
 
-const MainPage = () => {
+const MainPage = ({ session, navigation, challenges }) => {
+  _keyExtractor = item => item.id;
   return (
     <Fragment>
-      <View style={styles.container}>
+      <View style={styles.root}>
         <ImageBackground
           source={require("../../assets/images/BigHeader.png")}
           style={styles.backgroundImage}
         >
-          <Text style={styles.text}>GROUND CONTROL</Text>
+          <View style={styles.container}>
+            <Text style={styles.text}>GROUND CONTROL</Text>
+            <View style={styles.progression}>
+              <Text style={styles.progressionDate}>
+                {challenges[0].score.length}/31
+              </Text>
+            </View>
+            <Text style={styles.progressionText}>Progress</Text>
+          </View>
         </ImageBackground>
-        <MainPageSessionCard style={styles.card} />
+        <View style={styles.card}>
+          <FlatList
+            data={challenges}
+            horizontal={true}
+            keyExtractor={this._keyExtractor}
+            renderItem={({ item: rowData }) => {
+              return (
+                <View>
+                  <MainPageSessionCard
+                    navigation={navigation}
+                    session={session}
+                    challenges={rowData}
+                  />
+                </View>
+              );
+            }}
+          />
+        </View>
       </View>
     </Fragment>
   );
