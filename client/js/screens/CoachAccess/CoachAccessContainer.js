@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
 import CoachAccess from "./CoachAccess";
-import { View, Text } from "react-native";
 
 const LoginMutation = gql`
   mutation AuthenticateUser($email: String!, $password: String!) {

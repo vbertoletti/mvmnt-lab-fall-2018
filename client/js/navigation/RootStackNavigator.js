@@ -9,11 +9,13 @@ import SignInScreen from "../screens/SignIn";
 import SignUpScreen from "../screens/SignUp";
 
 import { sharedNavigationOptions } from "./config";
+import CoachScreen from "../screens/CoachAccess";
 
 const AuthStack = createStackNavigator(
   {
     SignIn: SignInScreen,
-    SignUp: SignUpScreen
+    SignUp: SignUpScreen,
+    Coach: CoachScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
