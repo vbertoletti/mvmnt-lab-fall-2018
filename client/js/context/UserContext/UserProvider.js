@@ -16,23 +16,34 @@ class UserProvider extends Component {
   }
 
   async storeSessionToken(token, id) {
-    await Realm.write(() => {
-      Realm.create("User", { id: id, token: token });
-      this.setState({ token: token, id: id });
-    });
+    try {
+      await Realm.write(() => {
+        Realm.create("User", { id: id, token: token });
+        this.setState({ token: token, id: id });
+      });
+    } catch (e) {
+      return e;
+    }
   }
 
   async removeUserIdToken(id) {
-    await Realm.write(() => {
-      Realm.delete(Realm.objectForPrimaryKey("User", id));
-      this.setState({ id: "", token: "" });
-    });
+    try {
+      await Realm.write(() => {
+        Realm.delete(Realm.objectForPrimaryKey("User", id));
+        this.setState({ id: null, token: null });
+      });
+    } catch (e) {
+      return e;
+    }
   }
 
   async queryUser() {
-    let userToken = await Realm.objects("User").map(user => user.token);
-    let userId = await Realm.objects("User").map(user => user.id);
-    this.setState({ token: userToken, id: userId });
+    try {
+      let user = await Realm.objects("User").map(user => user);
+      this.setState({ id: user[0].id, token: user[0].token });
+    } catch (e) {
+      return e;
+    }
   }
 
   render() {

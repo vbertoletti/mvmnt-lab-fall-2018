@@ -7,13 +7,15 @@ import {
   TouchableOpacity,
   TextInput,
   Text,
-  StatusBar
+  StatusBar,
+  Alert
 } from "react-native";
 import styles from "./styles";
+import PropTypes from "prop-types";
 
 const required = value => (value ? undefined : "* Required Field");
 
-const LogIn = ({ login, storeSessionToken }) => {
+const SignIn = ({ login, storeSessionToken }) => {
   return (
     <Fragment>
       <StatusBar barStyle="light-content" />
@@ -21,12 +23,12 @@ const LogIn = ({ login, storeSessionToken }) => {
         source={require("../../assets/images/background.png")}
         style={styles.background}
       >
-        <View>
+        <Fragment>
           <Image
             source={require("../../assets/images/logo.png")}
             style={styles.companyLogo}
           />
-        </View>
+        </Fragment>
         <View style={styles.loginForm}>
           <Form
             onSubmit={async values => {
@@ -111,4 +113,9 @@ const LogIn = ({ login, storeSessionToken }) => {
   );
 };
 
-export default LogIn;
+export default SignIn;
+
+SignIn.propTypes = {
+  login: PropTypes.func.isRequired,
+  storeSessionToken: PropTypes.func.isRequired
+};

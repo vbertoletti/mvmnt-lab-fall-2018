@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import LogIn from "./LogIn";
+import SignIn from "./SignIn";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
+import PropTypes from "prop-types";
 
 const LoginMutation = gql`
   mutation AuthenticateUser($email: String!, $password: String!) {
@@ -13,7 +14,7 @@ const LoginMutation = gql`
   }
 `;
 
-class LoginContainer extends Component {
+class SignInContainer extends Component {
   static navigationOptions = {
     header: null
   };
@@ -27,7 +28,7 @@ class LoginContainer extends Component {
                 this.props.navigation.navigate("App");
               } else {
                 return (
-                  <LogIn login={login} storeSessionToken={storeSessionToken} />
+                  <SignIn login={login} storeSessionToken={storeSessionToken} />
                 );
               }
             }}
@@ -38,4 +39,8 @@ class LoginContainer extends Component {
   }
 }
 
-export default LoginContainer;
+export default SignInContainer;
+
+SignInContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
