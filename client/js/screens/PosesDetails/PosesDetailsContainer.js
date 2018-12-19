@@ -3,7 +3,7 @@ import PosesDetails from "./PosesDetails";
 import propTypes from "prop-types";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import { Text } from "react-native";
+import { Text, View, ActivityIndicator } from "react-native";
 
 const PoseDetailsQuery = gql`
   query Pose($id: ID) {
@@ -18,23 +18,31 @@ const PoseDetailsQuery = gql`
 `;
 
 class PosesDetailsContainer extends Component {
-  static navigationOptions = {
-    title: "POSES",
+  static navigationOptions = ({ navigation }) => ({
+    title: navigation.getParam("title"),
     headerTitleStyle: {
       color: "white",
       fontSize: 24
     }
-  };
+  });
+
+  name = this.props;
   render() {
     return (
       <Query
         query={PoseDetailsQuery}
-        variables={{ id: "cjpk4j09b05sy0197umf9kqkf" }}
+        variables={{ id: this.props.navigation.state.params.id }}
       >
         {({ loading, error, data }) => {
-          if (loading) return <Text>Loading</Text>;
+          if (loading)
+            return (
+              <View style={{ flex: 1, justifyContent: "center" }}>
+                <ActivityIndicator size="large" color="#1CC6B1" />
+              </View>
+            );
           if (error) return <Text>`${error}`</Text>;
           if (data) {
+            console.log(this.props.navigation);
             return <PosesDetails posesDetails={data.Pose} />;
           }
         }}

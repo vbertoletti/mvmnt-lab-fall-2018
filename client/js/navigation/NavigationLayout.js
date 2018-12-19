@@ -16,6 +16,8 @@ import EditProfileScreen from "../screens/EditProfile";
 import ClientScreen from "../screens/Client";
 import { sharedNavigationOptions } from "./config";
 import { Image } from "react-native";
+import CoachScreen from "../screens/CoachAccess";
+import ClientScreen from "../screens/Client";
 
 const MainStack = createStackNavigator(
   {

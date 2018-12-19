@@ -5,7 +5,9 @@ import styles from "./styles";
 const Session = ({ session }) => {
   const thumbnail = {
     Bear: require("../../assets/images/icons/Bear.png"),
-    Superbug: require("../../assets/images/icons/Superbug.png")
+    Superbug: require("../../assets/images/icons/Superbug.png"),
+    Gargoyle: require("../../assets/images/icons/Gargoyle.png"),
+    Flamingo: require("../../assets/images/icons/Flamingo.png")
   };
   return (
     <View style={styles.sessionContainer}>

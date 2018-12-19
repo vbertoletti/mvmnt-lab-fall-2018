@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   progressionText: {
     alignSelf: "center",
     fontSize: 20,
-    width: 80,
+    width: 90,
     height: 30,
     color: "white",
     fontWeight: "bold",

@@ -19,6 +19,9 @@ const SessionDataQuery = gql`
 `;
 
 class WorkOutSessionContainer extends Component {
+  static navigationOptions = {
+    header: null
+  };
   render() {
     return (
       <Query query={SessionDataQuery}>

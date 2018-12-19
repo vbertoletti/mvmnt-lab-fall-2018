@@ -6,14 +6,13 @@ const styles = StyleSheet.create({
   container: globalStyles.container,
   card: {
     backgroundColor: "white",
-    width: width - 60,
-    height: 400,
+    width: width - 40,
+    height: 380,
     marginLeft: 20,
     marginRight: 10,
     marginTop: 170,
     alignItems: "center",
-    justifyContent: "space-between",
-    borderRadius: 20
+    justifyContent: "space-between"
   },
   text: {
     width: 100
@@ -21,38 +20,30 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "column",
     flexWrap: "wrap",
-    borderRadius: 7,
     height: 38,
-    width: width - 70,
+    width: width - 44,
     backgroundColor: "#D8D8D8",
-    borderBottomStartRadius: 0,
-    borderBottomEndRadius: 0,
-    justifyContent: "center",
-    marginTop: 2
+    justifyContent: "center"
   },
   lightHeader: {
     fontSize: 16,
     justifyContent: "center",
-    width: 153,
+    width: 165,
     textAlign: "center",
     height: 38,
-    backgroundColor: "white",
-    borderRadius: 20,
-    paddingTop: 10
+    backgroundColor: "white"
   },
   darkHeader: {
     fontSize: 16,
     justifyContent: "center",
-    width: 153,
+    width: 165,
     textAlign: "center",
     height: 38,
     paddingRight: 10,
-    borderRadius: 20,
-    backgroundColor: "#D8D8D8",
-    paddingTop: 10
+    backgroundColor: "#D8D8D8"
   },
   sessionContainer: {
-    width: 320,
+    width: 300,
     height: 370
   },
   day: {
@@ -65,7 +56,7 @@ const styles = StyleSheet.create({
     height: 40,
     alignSelf: "center",
     borderRadius: 20,
-    marginBottom: 20,
+    marginBottom: 40,
     borderWidth: 1,
     borderColor: "black"
   },
@@ -75,10 +66,15 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   light: {
-    backgroundColor: "white"
+    backgroundColor: "white",
+    width: 160
   },
   heavy: {
-    backgroundColor: "white"
+    backgroundColor: "white",
+    width: 160
+  },
+  text: {
+    marginTop: 20
   }
 });
 
