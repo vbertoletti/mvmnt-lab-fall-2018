@@ -28,7 +28,6 @@ class WorkModal extends Component {
 
   render() {
     const { work } = this.state;
-    console.log(this.state.showModal);
     return (
       <Modal
         animationType="slide"
