@@ -40,7 +40,7 @@ class CompletedChallengesContainer extends Component {
             return (
               <Query
                 query={AllChallengesQuery}
-                variables={{ filter: { userId: "Owensid:))" } }}
+                variables={{ filter: { userId: userId } }}
               >
                 {({ loading, error, data }) => {
                   if (loading) return <Text>Loading</Text>;
@@ -52,20 +52,19 @@ class CompletedChallengesContainer extends Component {
                 }}
               </Query>
             );
+          } else {
+            return (
+              <Query query={AllChallengesQuery} variables={{ id }}>
+                {({ loading, error, data }) => {
+                  if (loading) return <Text>Loading</Text>;
+                  if (error) return <Text>{error}</Text>;
+                  if (data) {
+                    return <CompletedChallenges data={data} />;
+                  }
+                }}
+              </Query>
+            );
           }
-          // else {
-          //   return (
-          //     <Query query={AllChallengesQuery} variables={{ id }}>
-          //       {({ loading, error, data }) => {
-          //         if (loading) return <Text>Loading</Text>;
-          //         if (error) return <Text>{error}</Text>;
-          //         if (data) {
-          //           return <CompletedChallenges data={data} />;
-          //         }
-          //       }}
-          //     </Query>
-          //   );
-          // }
         }}
       </UserContext.Consumer>
     );
