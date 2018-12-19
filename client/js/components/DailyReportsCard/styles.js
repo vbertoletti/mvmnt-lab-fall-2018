@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { colors } from "../../config/styles";
 var width = Dimensions.get("window").width;
-var height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
     card: {
@@ -23,7 +22,6 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: colors.grey,
         width: '100%',
-        marginBottom: 50,
     },
     heading: {
         fontSize: 24,
@@ -72,6 +70,14 @@ const styles = StyleSheet.create({
         height: 15,
         justifyContent: "space-between"
     },
+    imageContainer: {
+        flexDirection: 'row'
+    },
+    image: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center'
+    }
 });
 
 export default styles;

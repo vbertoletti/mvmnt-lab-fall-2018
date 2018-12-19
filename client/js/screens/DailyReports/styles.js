@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height / 2,
     position: "absolute",
-    top: -65
+    top: -65 
   },
   container: {
     height: height,

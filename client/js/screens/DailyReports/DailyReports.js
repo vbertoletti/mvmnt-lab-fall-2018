@@ -1,14 +1,41 @@
 import React from "react";
-import {
-  View,
-  FlatList,
-  ImageBackground,
-  Text
-} from "react-native";
+import { View, FlatList, ImageBackground, Text } from "react-native";
 import styles from "./styles";
 import DailyReportsCard from "../../components/DailyReportsCard";
 
-const days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+const days = [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31
+];
 
 const DailyReports = ({ data }) => {
   return (
@@ -26,14 +53,14 @@ const DailyReports = ({ data }) => {
             <View style={styles.banner}>
               <Text style={styles.days}>{days}</Text>
             </View>
-          )
+          );
         }}
       />
 
       <FlatList
         data={data.allDailyReports}
         horizontal={true}
-        renderItem={({ item: rowData}) => {
+        renderItem={({ item: rowData }) => {
           return <DailyReportsCard data={rowData} />;
         }}
       />
