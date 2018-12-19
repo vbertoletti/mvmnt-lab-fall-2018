@@ -12,7 +12,7 @@ import styles from "./styles";
 
 const required = value => (value ? undefined : "* Required Field");
 
-const CoachAccess = ({ login }) => {
+const CoachAccess = ({ login, navigation, storeSessionToken }) => {
   return (
     <View>
       <StatusBar barStyle="light-content" />
@@ -27,6 +27,7 @@ const CoachAccess = ({ login }) => {
               onSubmit={async values => {
                 try {
                   let response = await login({ variables: values });
+                  console.log("res", response.data.authenticateUser.token);
                   storeSessionToken(
                     response.data.authenticateUser.token,
                     response.data.authenticateUser.id
@@ -49,6 +50,7 @@ const CoachAccess = ({ login }) => {
                         placeholder="Email"
                         style={styles.input}
                         placeholderTextColor="white"
+                        autoCapitalize="none"
                       />
                     )}
                   </Field>
@@ -59,12 +61,14 @@ const CoachAccess = ({ login }) => {
                         placeholder="Password"
                         style={styles.input}
                         placeholderTextColor="white"
+                        autoCapitalize="none"
                       />
                     )}
                   </Field>
                   <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
+                      // navigation.navigate("Coach");
                       handleSubmit(values);
                     }}
                   >
