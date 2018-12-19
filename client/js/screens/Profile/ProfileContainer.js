@@ -1,22 +1,17 @@
 import React, { Component } from "react";
-import { Text, TouchableOpacity, ActivityIndicator, View } from "react-native";
+import {
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+  View,
+  Image
+} from "react-native";
 import Profile from "./Profile";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
+import { Query, compose, graphql } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
 import CoachContext from "../../context/CoachContext/CoachProvider";
 import PropTypes from "prop-types";
-
-const profileScreenQuery = gql`
-  query($id: ID!) {
-    User(id: $id) {
-      id
-      firstname
-      lastname
-      image
-    }
-  }
-`;
+import { profileScreenQuery, AllChallengesQuery } from "../../apollo/index";
 
 class ProfileContainer extends Component {
   constructor(props) {
@@ -44,6 +39,9 @@ class ProfileContainer extends Component {
           }
         }}
       </CoachContext.Consumer>
+    ),
+    headerBackground: (
+      <Image source={require("../../assets/images/headerSmall.png")} />
     )
   });
 
@@ -81,10 +79,11 @@ class ProfileContainer extends Component {
                             return (
                               <Profile
                                 navigation={this.props.navigation}
-                                data={data}
+                                dataProfile={data}
                                 logout={removeUserIdToken}
                                 id={userId}
                                 coachId={id}
+                                allChallenges={this.props.allChallenges.allChallenges}
                               />
                             );
                           }
@@ -110,9 +109,10 @@ class ProfileContainer extends Component {
                     return (
                       <Profile
                         navigation={this.props.navigation}
-                        data={data}
+                        dataProfile={data}
                         logout={removeUserIdToken}
                         id={id}
+                        allChallenges={this.props.allChallenges.allChallenges}
                       />
                     );
                   }
@@ -126,7 +126,15 @@ class ProfileContainer extends Component {
   }
 }
 
-export default ProfileContainer;
+export default compose(
+  graphql(AllChallengesQuery, {
+    name: "allChallenges"
+  })
+)(ProfileContainer);
+
+ProfileContainer.defaultProps = {
+  allChallenges: null
+};
 
 ProfileContainer.propTypes = {
   navigation: PropTypes.object.isRequired
