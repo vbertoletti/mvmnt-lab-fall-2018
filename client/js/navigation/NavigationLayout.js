@@ -17,7 +17,6 @@ import ClientScreen from "../screens/Client";
 import RemindersDetailsScreen from "../screens/RemindersDetails";
 import { sharedNavigationOptions } from "./config";
 import { Image } from "react-native";
-import CoachScreen from "../screens/CoachAccess";
 
 const MainStack = createStackNavigator(
   {
