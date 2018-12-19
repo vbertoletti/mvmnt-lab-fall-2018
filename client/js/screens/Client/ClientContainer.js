@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import Client from "./Client";
-import { View, ActivityIndicator, Text } from "react-native";
+import { View, ActivityIndicator, Text, TouchableOpacity } from "react-native";
 import { formatSessionData } from "../../lib/helper";
+import CoachContext from "../../context/CoachContext/CoachProvider";
 
 const Clients = gql`
   query allUsers($filter: UserFilter) {
@@ -20,26 +21,56 @@ const Clients = gql`
 
 class ClientContainer extends Component {
   static navigationOptions = {
-    header: null
+    title: "CLIENTS",
+    headerTitleStyle: {
+      color: "white",
+      fontSize: 24
+    },
+    headerRight: (
+      <CoachContext.Consumer>
+        {({ id, removeCoachIdToken }) => {
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                removeCoachIdToken(id);
+                console.log(id);
+              }}
+            >
+              <Text style={{ color: "white", marginRight: 8 }}>LOGOUT</Text>
+            </TouchableOpacity>
+          );
+        }}
+      </CoachContext.Consumer>
+    )
   };
   render() {
     return (
-      <Query query={Clients}>
-        {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator />;
-          if (error) return <Text>{error}</Text>;
-          if (data) {
+      <CoachContext.Consumer>
+        {({ id }) => {
+          if (!id) {
+            this.props.navigation.navigate("Auth");
+          } else {
             return (
-              <View>
-                <Client
-                  client={formatSessionData(data.allUsers)}
-                  navigation={this.props.navigation}
-                />
-              </View>
+              <Query query={Clients}>
+                {({ loading, error, data }) => {
+                  if (loading) return <ActivityIndicator />;
+                  if (error) return <Text>{error}</Text>;
+                  if (data) {
+                    return (
+                      <View>
+                        <Client
+                          client={formatSessionData(data.allUsers)}
+                          navigation={this.props.navigation}
+                        />
+                      </View>
+                    );
+                  }
+                }}
+              </Query>
             );
           }
         }}
-      </Query>
+      </CoachContext.Consumer>
     );
   }
 }

@@ -29,13 +29,21 @@ class ProfileContainer extends Component {
       fontSize: 24
     },
     headerRight: (
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("EditProfile");
+      <CoachContext.Consumer>
+        {({ id }) => {
+          if (!id) {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("EditProfile");
+                }}
+              >
+                <Text style={{ color: "white", marginRight: 8 }}>EDIT</Text>
+              </TouchableOpacity>
+            );
+          }
         }}
-      >
-        <Text style={{ color: "white", marginRight: 8 }}>EDIT</Text>
-      </TouchableOpacity>
+      </CoachContext.Consumer>
     )
   });
 
@@ -50,7 +58,6 @@ class ProfileContainer extends Component {
                   if (!id) {
                     this.props.navigation.navigate("Auth");
                   } else {
-                    console.log("USER ID", this.userId);
                     userId = this.props.navigation.getParam("userId");
                     return (
                       <Query
@@ -77,6 +84,7 @@ class ProfileContainer extends Component {
                                 data={data}
                                 logout={removeUserIdToken}
                                 id={userId}
+                                coachId={id}
                               />
                             );
                           }
