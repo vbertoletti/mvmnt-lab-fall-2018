@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, SectionList, Image } from "react-native";
 import styles from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 
-const Client = ({ client }) => {
+const Client = ({ client, navigation }) => {
   return (
     <SectionList
       renderItem={({ item }) => {
@@ -12,7 +12,7 @@ const Client = ({ client }) => {
             <View style={styles.itemContainer} key={item.id}>
               <TouchableOpacity
                 style={styles.container}
-                onPress={() => alert("this will go to profile")}
+                onPress={() => navigation.navigate("Profile")}
               >
                 <Image
                   style={styles.icon}

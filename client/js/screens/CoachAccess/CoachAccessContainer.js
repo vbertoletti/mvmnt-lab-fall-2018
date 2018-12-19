@@ -3,7 +3,6 @@ import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
 import CoachAccess from "./CoachAccess";
-import { View, Text } from "react-native";
 
 const LoginMutation = gql`
   mutation AuthenticateUser($email: String!, $password: String!) {
@@ -23,11 +22,18 @@ class CoachAccessContainer extends Component {
       <Mutation mutation={LoginMutation}>
         {login => (
           <UserContext.Consumer>
-            {({ signin, token }) => {
+            {({ storeSessionToken, token }) => {
+              console.log(storeSessionToken, token);
               if (token) {
-                this.props.navigation.navigate("Client");
+                this.props.navigation.navigate("Coach");
               } else {
-                return <CoachAccess login={login} signin={signin} />;
+                return (
+                  <CoachAccess
+                    login={login}
+                    storeSessionToken={storeSessionToken}
+                    navigation={this.props.navigation}
+                  />
+                );
               }
             }}
           </UserContext.Consumer>

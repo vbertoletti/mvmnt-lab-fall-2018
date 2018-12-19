@@ -13,6 +13,7 @@ import CompletedChallengesScreen from "../screens/CompletedChallenges";
 import RemindersScreen from "../screens/Reminders";
 import AboutScreen from "../screens/About";
 import EditProfileScreen from "../screens/EditProfile";
+import ClientScreen from "../screens/Client";
 import { sharedNavigationOptions } from "./config";
 import { Image } from "react-native";
 
@@ -20,6 +21,18 @@ const MainStack = createStackNavigator(
   {
     Main: MainPageScreen,
     WorkoutSession: WorkoutSessionScreen
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+);
+
+export const CoachStack = createStackNavigator(
+  {
+    Client: ClientScreen,
+    Profile: ProfileScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({

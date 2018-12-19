@@ -4,16 +4,19 @@ import {
   createStackNavigator
 } from "react-navigation";
 import { AppStack } from "./NavigationLayout";
+import { CoachStack } from "./NavigationLayout";
 import SignInScreen from "../screens/SignIn";
 import SignUpScreen from "../screens/SignUp";
 import ForgotPasswordScreen from "../screens/ForgotPassword";
+import CoachSignInScreen from "../screens/CoachAccess";
 import { sharedNavigationOptions } from "./config";
 
 const AuthStack = createStackNavigator(
   {
     SignIn: SignInScreen,
     SignUp: SignUpScreen,
-    ForgotPassword: ForgotPasswordScreen
+    ForgotPassword: ForgotPasswordScreen,
+    CoachAccess: CoachSignInScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -25,7 +28,8 @@ const AuthStack = createStackNavigator(
 const AppNavigator = createSwitchNavigator(
   {
     Auth: AuthStack,
-    App: AppStack
+    App: AppStack,
+    Coach: CoachStack
   },
   {
     initialRouteName: "Auth"

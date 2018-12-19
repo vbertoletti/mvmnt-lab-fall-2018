@@ -31,7 +31,10 @@ class ClientContainer extends Component {
           if (data) {
             return (
               <View>
-                <Client client={formatSessionData(data.allUsers)} />
+                <Client
+                  client={formatSessionData(data.allUsers)}
+                  navigation={this.props.navigation}
+                />
               </View>
             );
           }
