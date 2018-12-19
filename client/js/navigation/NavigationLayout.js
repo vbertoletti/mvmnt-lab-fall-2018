@@ -14,10 +14,10 @@ import RemindersScreen from "../screens/Reminders";
 import AboutScreen from "../screens/About";
 import EditProfileScreen from "../screens/EditProfile";
 import ClientScreen from "../screens/Client";
+import RemindersDetailsScreen from "../screens/RemindersDetails";
 import { sharedNavigationOptions } from "./config";
 import { Image } from "react-native";
 import CoachScreen from "../screens/CoachAccess";
-import ClientScreen from "../screens/Client";
 
 const MainStack = createStackNavigator(
   {
@@ -63,6 +63,7 @@ const ProfileStack = createStackNavigator(
     DailyReports: DailyReportsScreen,
     CompletedChallenges: CompletedChallengesScreen,
     Reminders: RemindersScreen,
+    RemindersDetails: RemindersDetailsScreen,
     About: AboutScreen,
     EditProfile: EditProfileScreen
   },
