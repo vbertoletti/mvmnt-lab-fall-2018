@@ -3,8 +3,9 @@ import styles from "./styles";
 import React from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import PropTypes from "prop-types";
+import LinearGradient from "react-native-linear-gradient";
 
-const Profile = ({ navigation, data, logout, id, coachId }) => {
+const Profile = ({ navigation, dataProfile, logout, id, allChallenges, coachId }) => {
   return (
     <View style={styles.profileWrapper}>
       <View style={styles.profileHeader}>
@@ -13,17 +14,38 @@ const Profile = ({ navigation, data, logout, id, coachId }) => {
             source={require("../../assets/images/placeholder.jpg")}
             style={styles.profileImage}
           />
-          <Text style={styles.headerItemsText}>{` ${data.User.firstname} ${
-            data.User.lastname
-          }`}</Text>
+          <Text style={styles.headerItemsText}>{` ${
+            dataProfile.User.firstname
+          } ${dataProfile.User.lastname}`}</Text>
         </View>
+
         <View style={styles.headerItems}>
-          <View style={styles.progression}>
-            <Text style={styles.progressionText}>7/30</Text>
-          </View>
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            colors={["#1DC6C2", "#17C687"]}
+            style={styles.progression}
+          >
+            <View style={styles.progressionTextBox}>
+              {allChallenges &&
+                allChallenges.map(challenge => {
+                  if (
+                    challenge.startDate <= new Date().toISOString() &&
+                    challenge.endDate >= new Date().toISOString()
+                  ) {
+                    return (
+                      <Text style={styles.progressionText} key={challenge.id}>
+                        {challenge.score.length}/{challenge.daysBetween}
+                      </Text>
+                    );
+                  }
+                })}
+            </View>
+          </LinearGradient>
           <Text style={styles.headerItemsText}>Progress</Text>
         </View>
       </View>
+
       <TouchableOpacity
         style={styles.profileOptions}
         onPress={() => {
@@ -33,6 +55,7 @@ const Profile = ({ navigation, data, logout, id, coachId }) => {
         <Text style={styles.profileOptionsText}>Daily Reports </Text>
         <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.profileOptions}
         onPress={() => {
@@ -44,6 +67,7 @@ const Profile = ({ navigation, data, logout, id, coachId }) => {
         <Text style={styles.profileOptionsText}>Completed Challenges</Text>
         <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.reminders}
         onPress={() => {
@@ -53,6 +77,7 @@ const Profile = ({ navigation, data, logout, id, coachId }) => {
         <Text style={styles.profileOptionsText}>Reminders</Text>
         <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.about}
         onPress={() => {
@@ -77,9 +102,13 @@ const Profile = ({ navigation, data, logout, id, coachId }) => {
 };
 export default Profile;
 
+Profile.defaultProps = {
+  allChallenges: null
+};
+
 Profile.propTypes = {
   navigation: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
+  dataProfile: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired
 };

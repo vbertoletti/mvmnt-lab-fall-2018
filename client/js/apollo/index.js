@@ -59,6 +59,7 @@ export const AllChallengesQuery = gql`
       startDate
       endDate
       score
+      daysBetween
     }
   }
 `;
@@ -98,6 +99,16 @@ export const QueryUser = gql`
   }
 `;
 
+export const profileScreenQuery = gql`
+  query($id: ID!) {
+    User(id: $id) {
+      id
+      firstname
+      lastname
+      image
+    }
+  }
+`;
 export const AllDataQuery = gql`
   {
     allChallenges {

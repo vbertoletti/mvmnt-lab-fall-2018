@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { globalStyles, colors } from "../../config/styles";
+import { globalStyles } from "../../config/styles";
 import { Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 
   profileHeader: {
-    flex: 0.5,
+    flex: 0.3,
     flexDirection: "row",
     justifyContent: "space-around",
     marginBottom: 10,
@@ -24,46 +24,68 @@ const styles = StyleSheet.create({
   headerItems: {
     flex: 1,
     alignItems: "center",
-    paddingTop: 10
+    top: 40
   },
 
   profileImage: {
-    height: 80,
-    width: 80,
-    borderRadius: 40
+    height: 90,
+    width: 90,
+    borderRadius: 46
   },
 
   progression: {
     borderRadius: 50,
-    borderWidth: 7,
-    borderColor: colors.green,
-    height: 80,
-    width: 80
+    height: 90,
+    width: 90
+  },
+
+  progressionTextBox: {
+    backgroundColor: "white",
+    borderRadius: 50,
+    height: 70,
+    width: 70,
+    alignSelf: "center",
+    position: "absolute",
+    top: 10
+  },
+  headerItemsText: {
+    paddingTop: 5,
+    fontSize: 16,
+    fontWeight: "bold"
   },
 
   progressionText: {
     alignSelf: "center",
-    fontSize: 20,
-    padding: 20
+    fontSize: 18,
+    paddingVertical: 25
   },
 
   profileOptions: {
     borderTopWidth: 1,
     borderColor: "#D6D6D6",
     width: Dimensions.get("window").width,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    flex: 0.1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 20
   },
 
   profileOptionsText: {
-    fontSize: 15,
-    padding: 20
+    fontSize: 16
   },
 
   reminders: {
     borderWidth: 1,
     borderColor: "#D6D6D6",
     width: Dimensions.get("window").width,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    flex: 0.1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 20
   },
 
   about: {
@@ -71,24 +93,30 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#D6D6D6",
     width: Dimensions.get("window").width,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    flex: 0.1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 20
   },
 
   profileButton: {
-    marginBottom: 10,
     borderRadius: 50,
     alignSelf: "center",
     borderColor: "black",
     borderWidth: 1,
     width: 250,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    marginTop: 10
   },
 
   buttonText: {
     fontSize: 15,
     alignSelf: "center",
     padding: 15,
-    borderRadius: 50
+    borderRadius: 50,
+    fontWeight: "bold"
   }
 });
 export default styles;
