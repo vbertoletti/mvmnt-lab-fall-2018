@@ -3,6 +3,7 @@ import SignIn from "./SignIn";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
+import CoachContext from "../../context/CoachContext/CoachProvider";
 import PropTypes from "prop-types";
 
 const LoginMutation = gql`
@@ -28,11 +29,21 @@ class SignInContainer extends Component {
                 this.props.navigation.navigate("App");
               } else {
                 return (
-                  <SignIn
-                    login={login}
-                    storeSessionToken={storeSessionToken}
-                    navigation={this.props.navigation}
-                  />
+                  <CoachContext.Consumer>
+                    {({ token }) => {
+                      if (token) {
+                        this.props.navigation.navigate("Coach");
+                      } else {
+                        return (
+                          <SignIn
+                            login={login}
+                            storeSessionToken={storeSessionToken}
+                            navigation={this.props.navigation}
+                          />
+                        );
+                      }
+                    }}
+                  </CoachContext.Consumer>
                 );
               }
             }}

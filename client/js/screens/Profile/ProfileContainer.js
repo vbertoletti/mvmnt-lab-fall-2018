@@ -1,23 +1,22 @@
 import React, { Component } from "react";
-import { Text, TouchableOpacity, ActivityIndicator, View } from "react-native";
+import {
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+  View,
+  Image
+} from "react-native";
 import Profile from "./Profile";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
+import { Query, compose, graphql } from "react-apollo";
 import UserContext from "../../context/UserContext/UserProvider";
+import CoachContext from "../../context/CoachContext/CoachProvider";
 import PropTypes from "prop-types";
-
-const profileScreenQuery = gql`
-  query($id: ID!) {
-    User(id: $id) {
-      id
-      firstname
-      lastname
-      image
-    }
-  }
-`;
+import { profileScreenQuery, AllChallengesQuery } from "../../apollo/index";
 
 class ProfileContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
   static navigationOptions = ({ navigation }) => ({
     title: "PROFILE",
     headerTitleStyle: {
@@ -25,13 +24,24 @@ class ProfileContainer extends Component {
       fontSize: 24
     },
     headerRight: (
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("EditProfile");
+      <CoachContext.Consumer>
+        {({ id }) => {
+          if (!id) {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("EditProfile");
+                }}
+              >
+                <Text style={{ color: "white", marginRight: 8 }}>EDIT</Text>
+              </TouchableOpacity>
+            );
+          }
         }}
-      >
-        <Text style={{ color: "white", marginRight: 8 }}>EDIT</Text>
-      </TouchableOpacity>
+      </CoachContext.Consumer>
+    ),
+    headerBackground: (
+      <Image source={require("../../assets/images/headerSmall.png")} />
     )
   });
 
@@ -40,7 +50,50 @@ class ProfileContainer extends Component {
       <UserContext.Consumer>
         {({ removeUserIdToken, id }) => {
           if (!id) {
-            this.props.navigation.navigate("Auth");
+            return (
+              <CoachContext.Consumer>
+                {({ id }) => {
+                  if (!id) {
+                    this.props.navigation.navigate("Auth");
+                  } else {
+                    userId = this.props.navigation.getParam("userId");
+                    return (
+                      <Query
+                        query={profileScreenQuery}
+                        variables={{ id: userId }}
+                      >
+                        {({ loading, error, data }) => {
+                          if (loading)
+                            return (
+                              <View
+                                style={{ flex: 1, justifyContent: "center" }}
+                              >
+                                <ActivityIndicator
+                                  size="large"
+                                  color="#1CC6B1"
+                                />
+                              </View>
+                            );
+                          if (error) return <Text>{error}</Text>;
+                          if (data) {
+                            return (
+                              <Profile
+                                navigation={this.props.navigation}
+                                dataProfile={data}
+                                logout={removeUserIdToken}
+                                id={userId}
+                                coachId={id}
+                                allChallenges={this.props.allChallenges.allChallenges}
+                              />
+                            );
+                          }
+                        }}
+                      </Query>
+                    );
+                  }
+                }}
+              </CoachContext.Consumer>
+            );
           } else {
             return (
               <Query query={profileScreenQuery} variables={{ id }}>
@@ -56,9 +109,10 @@ class ProfileContainer extends Component {
                     return (
                       <Profile
                         navigation={this.props.navigation}
-                        data={data}
+                        dataProfile={data}
                         logout={removeUserIdToken}
                         id={id}
+                        allChallenges={this.props.allChallenges.allChallenges}
                       />
                     );
                   }
@@ -72,7 +126,15 @@ class ProfileContainer extends Component {
   }
 }
 
-export default ProfileContainer;
+export default compose(
+  graphql(AllChallengesQuery, {
+    name: "allChallenges"
+  })
+)(ProfileContainer);
+
+ProfileContainer.defaultProps = {
+  allChallenges: null
+};
 
 ProfileContainer.propTypes = {
   navigation: PropTypes.object.isRequired

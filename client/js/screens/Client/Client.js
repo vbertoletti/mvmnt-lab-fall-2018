@@ -12,7 +12,11 @@ const Client = ({ client, navigation }) => {
             <View style={styles.itemContainer} key={item.id}>
               <TouchableOpacity
                 style={styles.container}
-                onPress={() => navigation.navigate("Profile")}
+                onPress={() =>
+                  navigation.navigate("Profile", {
+                    userId: item.id
+                  })
+                }
               >
                 <Image
                   style={styles.icon}

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import DailyReports from "./DailyReports";
 import gql from "graphql-tag";
-import { View, Text } from "react-native";
+import { View, Text, ActivityIndicator } from "react-native";
 import { Query } from "react-apollo";
 import styles from "./styles";
+import UserContext from "../../context/UserContext/UserProvider";
 
 const DailyReportQuery = gql`
-  query allDailyReports {
-    allDailyReports {
+  query allDailyReports($userId: String) {
+    allDailyReports(filter: { userId: $userId }) {
       id
       date
       pain
@@ -19,32 +20,41 @@ const DailyReportQuery = gql`
     }
   }
 `;
-
 class DailyReportsContainer extends Component {
   static navigationOptions = {
     title: "DAILY REPORTS",
+    headerTintColor: 'white',
     headerTitleStyle: {
       color: "white",
       fontSize: 24
+    },
+    headerStyle: {
+      backgroundColor: "transparent",
+      borderBottomColor: "transparent"
     }
   };
   render() {
     return (
-      <Query query={DailyReportQuery}>
-        {({ loading, error, data }) => {
-          if (loading)
-            return (
-              <View style={styles.centerContainer}>
-                <Text> Loading</Text>
-              </View>
-            );
-          if (error) return `${error}`;
-          if (data) {
-            return <DailyReports data={data} />;
-          }
-        }}
-      </Query>
-    );
+      <UserContext.Consumer>
+        {({ id }) => (
+          <Query query={DailyReportQuery}
+            variables={{ userId: "cjpa5q4ip0ccn0130y1xdj32i" }}>
+            {({ loading, error, data }) => {
+              if (loading)
+                return (
+                  <View style={styles.container}>
+                    <ActivityIndicator/>
+                  </View>
+                );
+              if (error) return `${error}`;
+              if (data) {
+                return <DailyReports data={data} />;
+              }
+            }}
+          </Query>
+        )}
+      </UserContext.Consumer>
+    )
   }
 }
 

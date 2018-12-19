@@ -59,6 +59,7 @@ export const AllChallengesQuery = gql`
       startDate
       endDate
       score
+      daysBetween
     }
   }
 `;
