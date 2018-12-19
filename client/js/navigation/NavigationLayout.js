@@ -33,7 +33,8 @@ export const CoachStack = createStackNavigator(
   {
     Client: ClientScreen,
     Profile: ProfileScreen,
-    CompletedChallenges: CompletedChallengesScreen
+    CompletedChallenges: CompletedChallengesScreen,
+    DailyReports: DailyReportsScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
