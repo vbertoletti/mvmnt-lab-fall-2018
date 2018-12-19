@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import UserContext from "../../context/UserContext/UserProvider";
+import CoachContext from "../../context/CoachContext/CoachProvider";
 import CoachAccess from "./CoachAccess";
 
 const LoginMutation = gql`
@@ -21,9 +21,8 @@ class CoachAccessContainer extends Component {
     return (
       <Mutation mutation={LoginMutation}>
         {login => (
-          <UserContext.Consumer>
+          <CoachContext.Consumer>
             {({ storeSessionToken, token }) => {
-              console.log(storeSessionToken, token);
               if (token) {
                 this.props.navigation.navigate("Coach");
               } else {
@@ -36,7 +35,7 @@ class CoachAccessContainer extends Component {
                 );
               }
             }}
-          </UserContext.Consumer>
+          </CoachContext.Consumer>
         )}
       </Mutation>
     );

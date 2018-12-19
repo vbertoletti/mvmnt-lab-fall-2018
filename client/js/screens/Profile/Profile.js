@@ -4,7 +4,7 @@ import React from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import PropTypes from "prop-types";
 
-const Profile = ({ navigation, data, logout, id }) => {
+const Profile = ({ navigation, data, logout, id, coachId }) => {
   return (
     <View style={styles.profileWrapper}>
       <View style={styles.profileHeader}>
@@ -36,7 +36,9 @@ const Profile = ({ navigation, data, logout, id }) => {
       <TouchableOpacity
         style={styles.profileOptions}
         onPress={() => {
-          navigation.navigate("CompletedChallenges");
+          navigation.navigate("CompletedChallenges", {
+            userId: id
+          });
         }}
       >
         <Text style={styles.profileOptionsText}>Completed Challenges</Text>
@@ -60,14 +62,16 @@ const Profile = ({ navigation, data, logout, id }) => {
         <Text style={styles.profileOptionsText}>About</Text>
         <FontAwesome5 name={"chevron-right"} size={20} solid />
       </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.profileButton}
-        onPress={() => {
-          logout(id);
-        }}
-      >
-        <Text style={styles.buttonText}>LOGOUT</Text>
-      </TouchableOpacity>
+      {coachId === undefined && (
+        <TouchableOpacity
+          style={styles.profileButton}
+          onPress={() => {
+            logout(id);
+          }}
+        >
+          <Text style={styles.buttonText}>LOGOUT</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

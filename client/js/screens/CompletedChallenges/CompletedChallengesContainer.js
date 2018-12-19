@@ -33,20 +33,34 @@ class CompletedChallengesContainer extends Component {
   render() {
     return (
       <UserContext.Consumer>
-        {({ id }) => (
-          <Query
-            query={AllChallengesQuery}
-            variables={{ userId: "cjpa5q4ip0ccn0130y1xdj32i" }}
-          >
-            {({ loading, error, data }) => {
-              if (loading) return <Text>Loading</Text>;
-              if (error) return <Text>{error}</Text>;
-              if (data) {
-                return <CompletedChallenges data={data} />;
-              }
-            }}
-          </Query>
-        )}
+        {({ id }) => {
+          if (!id) {
+            userId = this.props.navigation.getParam("userId");
+            return (
+              <Query query={AllChallengesQuery} variables={{ userId }}>
+                {({ loading, error, data }) => {
+                  if (loading) return <Text>Loading</Text>;
+                  if (error) return <Text>{error}</Text>;
+                  if (data) {
+                    return <CompletedChallenges data={data} />;
+                  }
+                }}
+              </Query>
+            );
+          } else {
+            return (
+              <Query query={AllChallengesQuery} variables={{ id }}>
+                {({ loading, error, data }) => {
+                  if (loading) return <Text>Loading</Text>;
+                  if (error) return <Text>{error}</Text>;
+                  if (data) {
+                    return <CompletedChallenges data={data} />;
+                  }
+                }}
+              </Query>
+            );
+          }
+        }}
       </UserContext.Consumer>
     );
   }

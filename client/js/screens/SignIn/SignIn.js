@@ -17,7 +17,6 @@ import LinearGradient from "react-native-linear-gradient";
 const required = value => (value ? undefined : "* Required Field");
 
 const SignIn = ({ login, storeSessionToken, navigation }) => {
-  console.log(navigation);
   return (
     <Fragment>
       <StatusBar barStyle="light-content" />

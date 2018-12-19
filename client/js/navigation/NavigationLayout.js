@@ -32,7 +32,8 @@ const MainStack = createStackNavigator(
 export const CoachStack = createStackNavigator(
   {
     Client: ClientScreen,
-    Profile: ProfileScreen
+    Profile: ProfileScreen,
+    CompletedChallenges: CompletedChallengesScreen
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
