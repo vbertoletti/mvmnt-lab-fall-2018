@@ -3,24 +3,24 @@ import {
   Text,
   View,
   FlatList,
-  ScrollView
+  TouchableOpacity
 } from "react-native";
+import ReminderSwitch from './ReminderSwitch'
 import styles from "./styles";
 
-const Reminders = () => {
+const Reminders = ({ navigation }) => {
   renderSeparator = () => {
     return (
       <View
-        style={{
-          height: 1,
-          backgroundColor: "#CED0CE"
-        }}
+        style={
+          styles.seperator
+        }
       />
     );
   };
-  _keyExtractor = item => item.id;
+  const keyExtractor = item => item.id;
   return (
-    <ScrollView>
+    <React.Fragment>
       <FlatList
         data={[
           { id: "0", day: "Monday", time: "05:00 PM" },
@@ -31,17 +31,21 @@ const Reminders = () => {
           { id: "5", day: "Saturday", time: "05:00 PM" },
           { id: "6", day: "Sunday", time: "05:00 PM" }
         ]}
-        keyExtractor={this._keyExtractor}
+        keyExtractor={keyExtractor}
         ItemSeparatorComponent={this.renderSeparator}
         renderItem={({ item }) => (
-          <View style={styles.Pose}>
-            <Text style={styles.image}>{item.day}</Text>
-            <Text style={styles.time}>{item.time}</Text>
-            <ReminderSwitch />
-          </View>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ReminderDetails')
+          }}>
+            <View style={styles.reminder}>
+              <Text style={styles.day}>{item.day}</Text>
+              <Text style={styles.time}>{item.time}</Text>
+              <ReminderSwitch />
+            </View>
+          </TouchableOpacity>
         )}
       />
-    </ScrollView>
+    </React.Fragment>
   );
 }
 
