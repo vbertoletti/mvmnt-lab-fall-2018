@@ -36,17 +36,12 @@ class CompletedChallengesContainer extends Component {
         {({ id }) => {
           if (!id) {
             userId = this.props.navigation.getParam("userId");
-            console.log(userId);
             return (
-              <Query
-                query={AllChallengesQuery}
-                variables={{ filter: { userId: userId } }}
-              >
+              <Query query={AllChallengesQuery} variables={{ userId }}>
                 {({ loading, error, data }) => {
                   if (loading) return <Text>Loading</Text>;
                   if (error) return <Text>{error}</Text>;
                   if (data) {
-                    console.log("data", data);
                     return <CompletedChallenges data={data} />;
                   }
                 }}

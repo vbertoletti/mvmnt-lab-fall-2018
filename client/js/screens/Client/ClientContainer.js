@@ -33,7 +33,6 @@ class ClientContainer extends Component {
             <TouchableOpacity
               onPress={() => {
                 removeCoachIdToken(id);
-                console.log(id);
               }}
             >
               <Text style={{ color: "white", marginRight: 8 }}>LOGOUT</Text>
